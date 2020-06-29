@@ -6,6 +6,8 @@
 
 # MSB integration in node-RED flows
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb?ref=badge_shield)
+
 **Compatibility Matrix**
 
 Version compatibility to MSB versions:
@@ -60,3 +62,6 @@ To connect the flow to an MSB instance and test it, some steps need to be done:
 5. Optional: if you also want to test incoming messages from MSB to the node app, 
 you can __add an integration flow__ in MSB GUI linking hte node app events to its functions (just for testing) e.g.
 ![Sample node-RED flow](doc/images/sample-msb-flow.png)
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb?ref=badge_large)
