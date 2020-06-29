@@ -48,6 +48,7 @@ Available nodes:
 You can use [this sample flow](doc/flows/sample-flow.json) to test the capabilities of the nodes:
 
 ![Sample node-RED flow](doc/images/sample-node-red-flow.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb?ref=badge_shield)
 
 To connect the flow to an MSB instance and test it, some steps need to be done:
 1. Update following field in the __msb-object node__:
@@ -60,3 +61,7 @@ To connect the flow to an MSB instance and test it, some steps need to be done:
 5. Optional: if you also want to test incoming messages from MSB to the node app, 
 you can __add an integration flow__ in MSB GUI linking hte node app events to its functions (just for testing) e.g.
 ![Sample node-RED flow](doc/images/sample-msb-flow.png)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb?ref=badge_large)
