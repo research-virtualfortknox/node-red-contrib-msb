@@ -1,6 +1,6 @@
 {
   "name": "@vfk_research/node-red-contrib-msb",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Nodes to connect to the Manufacturing Service Bus (MSB) developed by VFK Research (Fraunhofer IPA)",
   "author": "Matthias Stöhr, Georg Weber",
   "license": "Apache-2.0",
