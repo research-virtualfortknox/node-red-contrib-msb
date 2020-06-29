@@ -1,0 +1,49 @@
+{
+  "name": "@vfk_research/node-red-contrib-msb",
+  "version": "0.0.2",
+  "description": "Nodes to connect to the Manufacturing Service Bus (MSB) developed by VFK Research (Fraunhofer IPA)",
+  "author": "Matthias Stöhr, Georg Weber",
+  "license": "Apache-2.0",
+  "homepage": "https://research.virtualfortknox.de/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@vfk_research/msb-client-websocket-nodejs": "^1.0.8",
+    "debug": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-config-strongloop": "^2.1.0"
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore  --ext .html ."
+  },
+  "keywords": [
+    "node-red",
+    "vfk",
+    "msb",
+    "websocket",
+    "manufacturing service bus",
+    "integration",
+    "cps",
+    "iot",
+    "IPA",
+    "IGCV"
+  ],
+  "node-red": {
+    "nodes": {
+      "msb-object": "msb-client/msb-object.js",
+      "msb-event": "msb-client/msb-event.js",
+      "msb-config": "msb-client/msb-config.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/research-virtualfortknox/node-red-contrib-msb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/research-virtualfortknox/node-red-contrib-msb/issues"
+  }
+}

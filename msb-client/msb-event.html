@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    /* global RED */
+    'use strict';
+    RED.nodes.registerType('msb-event', {
+      category: 'msb',
+      color: '#eb9a3d',
+      defaults: {
+        name: { value: '' },
+        event: { value: '' },
+      },
+      inputs: 1,
+      outputs: 1,
+      icon: 'bridge.png',
+      label: function() {
+        return this.name || 'msb-event';
+      },
+      oneditprepare: function() {
+        let node = this;
+        // call api endpoint to get all msb events of a deployed msb-object
+        $.getJSON('msbevents', function(data) {
+          data.forEach(function(value) {
+            if (node.event === value.name) {
+              $('#node-input-event').append(
+                $('<option selected value=' + value.name + '>'
+                      + value.name + '</option>')
+              );
+            } else {
+              $('#node-input-event').append(
+                $('<option value=' + value.name + '>'
+                      + value.name + '</option>')
+              );
+            }
+          });
+        });
+      },
+    });
+</script>
+
+<script type="text/x-red" data-template-name="msb-event">
+    <div class="form-row">
+       <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+       <input type="text" id="node-input-name" placeholder="Name">
+   </div>
+   <div class="form-row">
+        <label for="node-input-event"><i class="fa fa-globe"></i> Event</label>
+        <select  id="node-input-event" style="width:70%">
+        <input type="hidden" id="node-input-eventselect">
+   </div>
+</script>
+
+<script type="text/x-red" data-help-name="msb-event">
+    <p>Use this node to match incoming message to a msb-object event id and link it with the input of the msb-object node.</p>
+    <p>
+        To get all the event ids defined in a msb-object node, it is required to deploy the specified msb-object first.
+        Afterwards the select component in the msb-event node will be updated.
+    </p>
+</script>

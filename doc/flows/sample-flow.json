@@ -1,0 +1,604 @@
+[
+    {
+        "id": "d02e6962.44164",
+        "type": "tab",
+        "label": "MSB Test Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bccbedca.0561a",
+        "type": "msb-object",
+        "z": "d02e6962.44164",
+        "name": "Node-Red Test App",
+        "eventList": [
+            {
+                "name": "SIMPLE_E1",
+                "dataTypeName": "string",
+                "schema": ""
+            },
+            {
+                "name": "SIMPLE_E2",
+                "dataTypeName": "boolean",
+                "schema": ""
+            },
+            {
+                "name": "SIMPLE_E3",
+                "dataTypeName": "int32",
+                "schema": ""
+            },
+            {
+                "name": "SIMPLE_E4",
+                "dataTypeName": "int64",
+                "schema": ""
+            },
+            {
+                "name": "SIMPLE_E5",
+                "dataTypeName": "float",
+                "schema": ""
+            },
+            {
+                "name": "SIMPLE_E6",
+                "dataTypeName": "double",
+                "schema": ""
+            },
+            {
+                "name": "SIMPLE_E7",
+                "dataTypeName": "byte",
+                "schema": ""
+            },
+            {
+                "name": "SIMPLE_E8",
+                "dataTypeName": "date-time",
+                "schema": ""
+            },
+            {
+                "name": "COMPLEX_E9",
+                "dataTypeName": "object",
+                "schema": "{\"dataObject\":{\"$ref\":\"#/definitions/MyDevice\"},\"MyDevice\":{\"type\":\"object\",\"properties\":{\"deviceName\":{\"type\":\"string\"},\"deviceWeight\":{\"type\":\"number\",\"format\":\"float\"},\"submodules\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyModule\"}}}},\"MyModule\":{\"type\":\"object\",\"properties\":{\"moduleName\":{\"type\":\"string\"}}}}"
+            }
+        ],
+        "configList": [
+            {
+                "name": "confParam1",
+                "dataTypeName": "string",
+                "configValue": "StringValue"
+            },
+            {
+                "name": "confParam2",
+                "dataTypeName": "boolean",
+                "configValue": "true"
+            },
+            {
+                "name": "confParam3",
+                "dataTypeName": "int32",
+                "configValue": "1000"
+            },
+            {
+                "name": "confParam4",
+                "dataTypeName": "int64",
+                "configValue": "8000"
+            },
+            {
+                "name": "confParam5",
+                "dataTypeName": "float",
+                "configValue": "1.3"
+            },
+            {
+                "name": "confParam6",
+                "dataTypeName": "double",
+                "configValue": "3.3"
+            },
+            {
+                "name": "confParam7",
+                "dataTypeName": "byte",
+                "configValue": "byte-string"
+            },
+            {
+                "name": "confParam8",
+                "dataTypeName": "date-time",
+                "configValue": "2019-07-23 11:07:00.938401"
+            }
+        ],
+        "functionList": [
+            {
+                "name": "SIMPLE_F1",
+                "dataTypeName": "string",
+                "schema": "",
+                "output": "0"
+            },
+            {
+                "name": "SIMPLE_F2",
+                "dataTypeName": "boolean",
+                "schema": "",
+                "output": "1"
+            },
+            {
+                "name": "SIMPLE_F3",
+                "dataTypeName": "int32",
+                "schema": "",
+                "output": "2"
+            },
+            {
+                "name": "SIMPLE_F4",
+                "dataTypeName": "int64",
+                "schema": "",
+                "output": "3"
+            },
+            {
+                "name": "SIMPLE_F5",
+                "dataTypeName": "float",
+                "schema": "",
+                "output": "4"
+            },
+            {
+                "name": "SIMPLE_F6",
+                "dataTypeName": "double",
+                "schema": "",
+                "output": "5"
+            },
+            {
+                "name": "SIMPLE_F7",
+                "dataTypeName": "byte",
+                "schema": "",
+                "output": "6"
+            },
+            {
+                "name": "SIMPLE_F8",
+                "dataTypeName": "date-time",
+                "schema": "",
+                "output": "7"
+            },
+            {
+                "name": "COMPLEX_F9",
+                "dataTypeName": "object",
+                "schema": "{\"dataObject\":{\"$ref\":\"#/definitions/MyDevice\"},\"MyDevice\":{\"type\":\"object\",\"properties\":{\"deviceName\":{\"type\":\"string\"},\"deviceWeight\":{\"type\":\"number\",\"format\":\"float\"},\"submodules\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyModule\"}}}},\"MyModule\":{\"type\":\"object\",\"properties\":{\"moduleName\":{\"type\":\"string\"}}}}",
+                "output": "8"
+            }
+        ],
+        "uuid": "9cea7bd1-3a6f-4fbc-857a-f94fa050c045",
+        "url": "ws://10.15.26.12:8085",
+        "token": "9cea7bd1",
+        "description": "This is my sample application generated by MSB Studio",
+        "serviceType": "Application",
+        "outputs": 10,
+        "msbDebugLogging": true,
+        "msbEventCache": false,
+        "msbEventCacheSize": "1000",
+        "msbAutoReconnect": true,
+        "x": 710,
+        "y": 140,
+        "wires": [
+            [
+                "7a50052e.ea9fec"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ],
+            [
+                "980082ff.1a2ed"
+            ]
+        ]
+    },
+    {
+        "id": "9b5602f7.8672f8",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E1 (string)",
+        "event": "SIMPLE_E1",
+        "x": 450,
+        "y": 60,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "c30bd663.538408",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E2 (boolean)",
+        "event": "SIMPLE_E2",
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "b5f7e552.6f2638",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E3 (int32)",
+        "event": "SIMPLE_E3",
+        "x": 450,
+        "y": 140,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "203f6fa2.371ec8",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E4 (int64)",
+        "event": "SIMPLE_E4",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "3855db3.89a8524",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E5 (float)",
+        "event": "SIMPLE_E5",
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "b27b7a56.b82ba8",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E6 (double)",
+        "event": "SIMPLE_E6",
+        "x": 460,
+        "y": 260,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "4569998c.09d9e8",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E7 (byte)",
+        "event": "SIMPLE_E7",
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "b8d31493.57f918",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "SIMPLE_E8 (date-time)",
+        "event": "SIMPLE_E8",
+        "x": 460,
+        "y": 340,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "980082ff.1a2ed",
+        "type": "debug",
+        "z": "d02e6962.44164",
+        "name": "Message From MSB",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 970,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "51f5f5d7.6f18c4",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "",
+        "topic": "",
+        "payload": "Hello World",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 240,
+        "y": 60,
+        "wires": [
+            [
+                "9b5602f7.8672f8"
+            ]
+        ]
+    },
+    {
+        "id": "3b408471.5eb634",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "c30bd663.538408"
+            ]
+        ]
+    },
+    {
+        "id": "d3816bd3.55ef98",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "",
+        "topic": "",
+        "payload": "3",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "b5f7e552.6f2638"
+            ]
+        ]
+    },
+    {
+        "id": "e1578ca1.cb4ed",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "Big Number",
+        "topic": "",
+        "payload": "9223372036854775807",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 250,
+        "y": 180,
+        "wires": [
+            [
+                "203f6fa2.371ec8"
+            ]
+        ]
+    },
+    {
+        "id": "2605616e.0def4e",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "",
+        "topic": "",
+        "payload": "1.3",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "3855db3.89a8524"
+            ]
+        ]
+    },
+    {
+        "id": "335937db.c61dd8",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "Big Double",
+        "topic": "",
+        "payload": "92233720368.22",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 240,
+        "y": 260,
+        "wires": [
+            [
+                "b27b7a56.b82ba8"
+            ]
+        ]
+    },
+    {
+        "id": "4285d112.1a4d7",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "",
+        "topic": "",
+        "payload": "0x77",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 300,
+        "wires": [
+            [
+                "4569998c.09d9e8"
+            ]
+        ]
+    },
+    {
+        "id": "1b6643f5.2cb3bc",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "8fe6ef88.041c"
+            ]
+        ]
+    },
+    {
+        "id": "8fe6ef88.041c",
+        "type": "function",
+        "z": "d02e6962.44164",
+        "name": "toISOString",
+        "func": "msg.payload = new Date(msg.payload).toISOString();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "b8d31493.57f918"
+            ]
+        ]
+    },
+    {
+        "id": "7a50052e.ea9fec",
+        "type": "debug",
+        "z": "d02e6962.44164",
+        "name": "Message To MSB",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 970,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "afb81e24.1a96f8",
+        "type": "msb-event",
+        "z": "d02e6962.44164",
+        "name": "COMPLEX_E9 (object)",
+        "event": "COMPLEX_E9",
+        "x": 460,
+        "y": 380,
+        "wires": [
+            [
+                "bccbedca.0561a"
+            ]
+        ]
+    },
+    {
+        "id": "dec0f562.564ab8",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "Object",
+        "topic": "",
+        "payload": "{\"deviceName\":\"Device 1\",\"deviceWeight\":5.3,\"submodules\":[{\"moduleName\":\"Mod 1\"},{\"moduleName\":\"Mod 2\"},{\"moduleName\":\"Mod 3\"}]}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 380,
+        "wires": [
+            [
+                "afb81e24.1a96f8"
+            ]
+        ]
+    },
+    {
+        "id": "5d29d220.912054",
+        "type": "msb-config",
+        "z": "d02e6962.44164",
+        "name": "Get Config Param 1",
+        "configParam": "confParam1",
+        "x": 755,
+        "y": 460,
+        "wires": [
+            [
+                "4e1f88d7.736c88"
+            ]
+        ]
+    },
+    {
+        "id": "4e1f88d7.736c88",
+        "type": "debug",
+        "z": "d02e6962.44164",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 951,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "43f702d7.cff144",
+        "type": "inject",
+        "z": "d02e6962.44164",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 565,
+        "y": 460,
+        "wires": [
+            [
+                "5d29d220.912054"
+            ]
+        ]
+    }
+]

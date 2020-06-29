@@ -1,0 +1,571 @@
+<script type="text/javascript">
+    /* eslint-env browser */
+    /* global RED */
+    'use strict';
+    RED.nodes.registerType('msb-object', {
+      category: 'msb',
+      color: '#eb9a3d',
+      defaults: {
+        name: { value: '', required: true },
+        eventList: { value: [] },
+        configList: { value: [] },
+        functionList: { value: [] },
+        uuid: { value: '', required: true },
+        url: { value: '', required: true },
+        token: { value: '', required: true },
+        description: { value: '', required: true },
+        serviceType: { value: '', required: true },
+        outputs: { value: 1 },
+        msbDebugLogging: { value: true },
+        msbEventCache: { value: false },
+        msbEventCacheSize: { value: 1000, required: true },
+        msbAutoReconnect: { value: true }
+      },
+      status: {fill: 'red', shape: 'ring', text: 'disconnected'},
+      inputs: 1,
+      outputs: 1,
+      icon: 'bridge.png',
+      align: 'right',
+      label: function() {
+        return this.name || 'msb-node';
+      },
+      inputLabels: 'event input',
+      outputLabels: function(index) {
+        if (index === 0) {
+          return 'stdout';
+        }
+        return this.functionList[index - 1].name + '';
+      },
+    });
+
+    // on save, add all events, functions and configuration parameters to their lists
+    let msbNode = RED.nodes.registry.getNodeType('msb-object');
+    msbNode.oneditsave = function() {
+      let node = this;
+      let eventCacheItems = $('#node-input-eventList-container').children();
+      node.eventList = [];
+      eventCacheItems.each(function() {
+        node.eventList.push({
+          name: $(this).find('.eventListName').val(),
+          dataTypeName: $(this).find('.eventListDataType').val(),
+          schema: $(this).find('.eventListSchema').val(),
+        });
+      });
+      let configCacheItems = $('#node-input-configList-container').children();
+      node.configList = [];
+      configCacheItems.each(function() {
+        node.configList.push({
+          name: $(this).find('.configListName').val(),
+          dataTypeName: $(this).find('.configListDataType').val(),
+          configValue: $(this).find('.configListValue').val(),
+        });
+      });
+      let functionCacheItems = $('#node-input-functionList-container').children();
+      node.functionList = [];
+      node.outputs = $('#node-input-outputs').val('{}');
+      node.outputs[0].value = 1 + functionCacheItems.length;
+      functionCacheItems.each(function() {
+        node.functionList.push({
+          name: $(this).find('.functionListName').val(),
+          dataTypeName: $(this).find('.functionListDataType').val(),
+          schema: $(this).find('.functionListSchema').val(),
+          output: $(this).find('.functionListOutput').val(),
+        });
+      });
+    };
+
+    // on start editing the node, prepare the ui (dialog) with all tabs and forms
+    let injectNode = RED.nodes.registry.getNodeType('msb-object');
+    injectNode.oneditprepare = function() {
+      let node = this;
+      // configure all tabs
+      let tabs = RED.tabs.create({
+        id: 'node-input-msb-tabs',
+        onchange: function(tab) {
+          $('#node-input-msb-tabs-content').children().hide();
+          $('#' + tab.id).show();
+          // use the tab change listener to switch event schema input field to typedInput field (json)
+          if (tab.id === 'msb-tab-eventList'){
+            if (node.eventList !== undefined && node.eventList.length > 0) {
+              node.eventList.forEach(function(element, index, array) {
+                showItemSchemaField('node-input-eventList-schema', index, 'node-input-eventList-datatype' + index);
+              });
+            }
+          }
+          // use the tab change listener to switch function schema input field to typedInput field (json)
+          if (tab.id === 'msb-tab-functionList'){
+            if (node.functionList !== undefined && node.functionList.length > 0) {
+              node.functionList.forEach(function(element, index, array) {
+                showItemSchemaField('node-input-functionList-schema', index, 'node-input-functionList-datatype' + index);
+              });
+            }
+          }
+        },
+      });
+      tabs.addTab({
+        id: 'msb-tab-settings',
+        label: this._('Settings'),
+      });
+      tabs.addTab({
+        id: 'msb-tab-eventList',
+        label: this._('Events'),
+      });
+      tabs.addTab({
+        id: 'msb-tab-functionList',
+        label: this._('Functions'),
+      });
+      tabs.addTab({
+        id: 'msb-tab-configList',
+        label: this._('Configurations'),
+      });
+
+
+      // configList###############################################################################
+
+      // add all config parameters already specified to the ui
+      let configCacheItemCount = 0;
+      if (node.configList !== undefined && node.configList.length > 0) {
+        configCacheItemCount = node.configList.length;
+        node.configList.forEach(function(element, index, array) {
+          generateConfigEntry(element, index);
+        });
+      }
+
+      // generate html elements to be appended and added to the ui (for editing config parameters)
+      function generateConfigEntry(item, id) {
+        let container = $('<li/>', {
+          style: 'background: #fefefe; margin:0; padding:8px 0px; border-bottom: 1px solid #ccc;',
+        });
+        let row = $('<div class="row" id="row' + id + '" />').appendTo(container);
+
+        $('<i style="color: #eee; cursor: move;" class="node-input-configList-handle fa fa-bars"></i>').appendTo(row);
+
+        let configItemNameField = $('<input/>', {
+          class: 'configListName',
+          id: 'node-input-configList-name' + id,
+          type: 'text',
+          required: 'required',
+          style: 'margin:0 auto; width 20%;min-width:60px;margin-left:5px',
+          placeholder: 'config Name',
+        }).appendTo(row);
+        configItemNameField.val(item.name);
+
+        let configItemValueField = $('<input/>', {
+          class: 'configListValue',
+          id: 'node-input-configList-value' + id,
+          type: 'text',
+          style: 'margin:0 auto; width 20%;min-width:60px;margin-left:5px',
+          placeholder: 'initial value',
+        }).appendTo(row);
+        configItemValueField.val(item.configValue);
+
+        let configItemDataTypeField = $('<select>', {
+          class: 'configListDataType',
+          id: 'node-input-configList-datatype' + id,
+          style: 'margin: 0 auto; width:20%;min-width:60px;margin-left:5px',
+        });
+
+        // data types to be supported for config parameters (selectable)
+        // have to match the data type names of the msb self-description
+        let datatypenames = ['int32', 'int64', 'float', 'double', 'string', 'byte', 'boolean', 'date-time'];
+
+        datatypenames.forEach(function(value, key) {
+          if (item.dataTypeName === value) {
+            configItemDataTypeField.append($('<option></option>')
+              .attr('value', value)
+              .text(value)
+              .attr('selected', 'selected'));
+          } else {
+            configItemDataTypeField.append($('<option></option>')
+              .attr('value', value)
+              .text(value));
+          }
+        });
+        configItemDataTypeField.appendTo(row);
+
+
+        let finalspan = $('<span/>', {
+          style: 'float: right;margin-right: 10px;',
+        }).appendTo(row);
+
+        let removeItemButton = $('<a/>', {
+          href: '#',
+          id: 'node-button-remove' + id,
+          class: 'editor-button editor-button-small listButton',
+          style: 'margin-top: 7px; margin-left: 5px;',
+        }).appendTo(finalspan);
+
+        $('<i/>', {
+          class: 'fa fa-remove',
+        }).appendTo(removeItemButton);
+        removeItemButton.click(function() {
+          container.fadeOut(300, function() {
+            $(this).remove();
+          });
+        });
+
+        // finally append the container to the corresponding html element
+        $('#node-input-configList-container').append(container);
+
+      }
+
+      // click listener to add a new config parameter input to the ui form
+      $('#node-input-configList-add').click(function() {
+        if (!configCacheItemCount || configCacheItemCount < 0) {
+          configCacheItemCount = 0;
+        }
+        generateConfigEntry({
+          name: '',
+          dataTypeName: '',
+          configValue: '',
+        }, configCacheItemCount++); // length is every time one more than index
+        $('#node-input-configList-container-div').scrollTop($('#node-input-configList-container-div').get(0).scrollHeight);
+      });
+
+
+      // functionList###############################################################################
+
+      // add all functions already specified to the ui
+      let functionCacheItemCount = 0;
+      if (node.functionList !== undefined && node.functionList.length > 0) {
+        functionCacheItemCount = node.functionList.length;
+        node.functionList.forEach(function(element, index, array) {
+          generateFunctionEntry(element, index);
+        });
+      }
+
+      // generate html elements to be appended and added to the ui (for editing function)
+      function generateFunctionEntry(item, id) {
+        let container = $('<li/>', {
+          style: 'background: #fefefe; margin:0; padding:8px 0px; border-bottom: 1px solid #ccc;',
+        });
+        let row = $('<div class="row" id="row' + id + '" />').appendTo(container);
+
+        $('<i style="color: #eee; cursor: move;" class="node-input-functionList-handle fa fa-bars"></i>').appendTo(row);
+
+        let functionItemNameField = $('<input/>', {
+          class: 'functionListName',
+          id: 'node-input-functionList-name' + id,
+          type: 'text',
+          style: 'margin:0 auto; width 20%;min-width:60px;margin-left:5px',
+          placeholder: 'Function Name',
+        }).appendTo(row);
+        functionItemNameField.val(item.name);
+
+        let functionItemDataTypeField = $('<select>', {
+          class: 'functionListDataType',
+          id: 'node-input-functionList-datatype' + id,
+          style: 'margin: 0 auto; width:20%;min-width:60px;margin-left:5px',
+          onchange: 'showItemSchemaField(' +
+              "'node-input-functionList-schema', " + id + ", 'node-input-functionList-datatype" + id + "')",
+        });
+
+        // data types to be supported for functions (selectable)
+        // have to match the data type names of the msb self-description
+        let datatypenames = ['int32', 'int64', 'float', 'double', 'string', 'byte', 'boolean', 'date-time', 'object'];
+
+        datatypenames.forEach(function(value, key) {
+          if (item.dataTypeName === value) {
+            functionItemDataTypeField.append($('<option></option>')
+              .attr('value', value)
+              .text(value)
+              .attr('selected', 'selected'));
+          } else {
+            functionItemDataTypeField.append($('<option></option>')
+              .attr('value', value)
+              .text(value));
+          }
+        });
+        functionItemDataTypeField.appendTo(row);
+
+        let schemaContainer = $('<div id="node-input-functionList-schemaContainer' + id + '" />', {
+          style: '' + (item.dataTypeName === 'object' ? ';display:unset' : ';display:none'),
+        }).appendTo(row);
+        let itemSchemaField = $('<input/>', {
+          class: 'functionListSchema',
+          id: 'node-input-functionList-schema' + id,
+          type: 'text',
+          style: 'margin-left:16px' + (item.dataTypeName === 'object' ? ';display:unset' : ';display:none'),
+          placeholder: '{ "dataObject": { "type": "object", "properties": { "name": { "type": "string" } } } }',
+        }).appendTo(schemaContainer);
+        itemSchemaField.val(item.schema);
+
+        let functionItemOutputField = $('<input/>', {
+          class: 'functionListOutput',
+          id: 'node-input-functionList-output' + id,
+          type: 'hidden',
+        }).appendTo(row);
+        functionItemOutputField.val(id);
+
+        let finalspan = $('<span/>', {
+          style: 'float: right;margin-right: 10px;',
+        }).appendTo(row);
+
+        let removeItemButton = $('<a/>', {
+          href: '#',
+          id: 'node-button-remove' + id,
+          class: 'editor-button editor-button-small listButton',
+          style: 'margin-top: 7px; margin-left: 5px;',
+        }).appendTo(finalspan);
+
+        $('<i/>', {
+          class: 'fa fa-remove',
+        }).appendTo(removeItemButton);
+        removeItemButton.click(function() {
+          container.fadeOut(300, function() {
+            $(this).remove();
+          });
+        });
+
+        // finally append the container to the corresponding html element
+        $('#node-input-functionList-container').append(container);
+
+      }
+
+      // click listener to add a new function input to the ui form
+      $('#node-input-functionList-add').click(function() {
+        if (!functionCacheItemCount || functionCacheItemCount < 0) {
+          functionCacheItemCount = 0;
+        }
+        generateFunctionEntry({
+          name: '',
+          dataTypeName: '',
+          schema: '',
+          output: functionCacheItemCount.toString(),
+        }, functionCacheItemCount++); // length is every time one more than index
+        $('#node-input-functionList-container-div').scrollTop($('#node-input-functionList-container-div')
+          .get(0).scrollHeight);
+      });
+
+
+      // eventList###############################################################################
+
+      // add all events already specified to the ui
+      let cacheItemCount = 0;
+      if (node.eventList !== undefined && node.eventList.length > 0) {
+        cacheItemCount = node.eventList.length;
+        node.eventList.forEach(function(element, index, array) {
+          generateEventEntry(element, index);
+        });
+      }
+
+      // generate html elements to be appended and added to the ui (for editing events)
+      function generateEventEntry(item, id) {
+        let container = $('<li/>', {
+          style: 'background: #fefefe; margin:0; padding:8px 0px; border-bottom: 1px solid #ccc;',
+        });
+        let row = $('<div class="row" id="row' + id + '" />').appendTo(container);
+
+        $('<i style="color: #eee; cursor: move;" class="node-input-eventList-handle fa fa-bars"></i>').appendTo(row);
+
+        let itemNameField = $('<input/>', {
+          class: 'eventListName',
+          id: 'node-input-eventList-name' + id,
+          type: 'text',
+          style: 'margin:0 auto; width 20%;min-width:60px;margin-left:5px',
+          placeholder: 'Name',
+        }).appendTo(row);
+        itemNameField.val(item.name);
+
+        let itemDataTypeField = $('<select>', {
+          class: 'eventListDataType',
+          id: 'node-input-eventList-datatype' + id,
+          style: 'margin: 0 auto; width:20%;min-width:60px;margin-left:5px',
+          onchange: 'showItemSchemaField(' +
+              "'node-input-eventList-schema'," + id + ", 'node-input-eventList-datatype" + id + "')",
+        });
+
+        // data types to be supported for events (selectable)
+        // have to match the data type names of the msb self-description
+        let datatypenames = ['int32', 'int64', 'float', 'double', 'string', 'byte', 'boolean', 'date-time', 'object'];
+
+        datatypenames.forEach(function(value, key) {
+          if (item.dataTypeName === value) {
+            itemDataTypeField.append($('<option></option>')
+              .attr('value', value)
+              .text(value)
+              .attr('selected', 'selected'));
+          } else {
+            itemDataTypeField.append($('<option></option>')
+              .attr('value', value)
+              .text(value));
+          }
+        });
+        itemDataTypeField.appendTo(row);
+        // itemDataTypeField.val(item.dataTypeName)
+
+        let schemaContainer = $('<div id="node-input-eventList-schemaContainer' + id + '" />', {
+          style: '' + (item.dataTypeName === 'object' ? ';display:unset' : ';display:none'),
+        }).appendTo(row);
+        let itemSchemaField = $('<input/>', {
+          class: 'eventListSchema',
+          id: 'node-input-eventList-schema' + id,
+          type: 'text',
+          style: 'margin-left:16px' + (item.dataTypeName === 'object' ? ';display:unset' : ';display:none'),
+          placeholder: '{ "dataObject": { "type": "object", "properties": { "name": { "type": "string" } } } }',
+        }).appendTo(schemaContainer);
+        itemSchemaField.val(item.schema);
+
+        let finalspan = $('<span/>', {
+          style: 'float: right;margin-right: 10px;',
+        }).appendTo(row);
+
+        let removeItemButton = $('<a/>', {
+          href: '#',
+          id: 'node-button-remove' + id,
+          class: 'editor-button editor-button-small listButton',
+          style: 'margin-top: 7px; margin-left: 5px;',
+        }).appendTo(finalspan);
+
+        $('<i/>', {
+          class: 'fa fa-remove',
+        }).appendTo(removeItemButton);
+        removeItemButton.click(function() {
+          container.fadeOut(300, function() {
+            $(this).remove();
+          });
+        });
+
+        // finally append the container to the corresponding html element
+        $('#node-input-eventList-container').append(container);
+
+      }
+
+      // click listener to add a new event input to the ui form
+      $('#node-input-eventList-add').click(function() {
+        if (!cacheItemCount || cacheItemCount < 0) {
+          cacheItemCount = 0;
+        }
+        generateEventEntry({
+          name: '',
+          dataTypeName: '',
+          schema: '',
+        }, cacheItemCount++); // length is every time one more than index
+        $('#node-input-eventList-container-div').scrollTop($('#node-input-eventList-container-div').get(0).scrollHeight);
+      });
+    };
+
+    // hide the standard input field for event and function schemas and add a json editor widget (typedInput) instead
+    function showItemSchemaField(schemaFieldName, schemaFieldId, selectDatatypeFieldIdentifier){
+      try {
+        if (document.getElementById(schemaFieldName + schemaFieldId)){
+          var selectDatatypeField = document.getElementById(selectDatatypeFieldIdentifier);
+          document.getElementById(schemaFieldName + schemaFieldId)
+            .style.display = selectDatatypeField.value === 'object' ? 'unset' : 'none';
+          document.getElementById(schemaFieldName + 'Container' + schemaFieldId)
+            .style.display = selectDatatypeField.value === 'object' ? 'unset' : 'none';
+
+          if (selectDatatypeField.value === 'object'){
+            $('#' + schemaFieldName + schemaFieldId).typedInput({
+              default: 'json',
+              types: ['json'],
+            });
+          }
+        }
+      } catch (err){
+        console.error('Failed to convert item schema field to json editor field!', err);
+      }
+    }
+</script>
+
+//static html elements on properties section
+<script type="text/x-red" data-template-name="msb-object">
+    <div class="form-row">
+      <ul style="background: #fff; min-width: 600px; margin-bottom: 20px;" id="node-input-msb-tabs"></ul>
+    </div>
+    <div id="node-input-msb-tabs-content" style="min-height: 170px;">
+
+      <div id="msb-tab-settings" style="display:none">
+        <div class="form-row">
+          <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+          <input type="text" id="node-input-name" placeholder="Object Name">
+        </div>
+        <div class="form-row">
+          <label for="node-input-uuid"><i class="fa fa-id-card-o"></i> UUID</label>
+          <input type="text" id="node-input-uuid" placeholder="UUID">
+        </div>
+        <div class="form-row">
+          <label for="node-input-token"><i class="fa fa-key"></i> Token</label>
+          <input type="text" id="node-input-token" placeholder="Token">
+        </div>
+        <div class="form-row">
+          <label for="node-input-url"><i class="fa fa-globe"></i> MSB-URL</label>
+          <input type="text" id="node-input-url" placeholder="MSB-URL">
+        </div>
+        <div class="form-row">
+            <label for="node-input-serviceType"><i class="fa fa-briefcase"></i> Service-Type</label>
+            <select  id="node-input-serviceType">
+                <option selected value="SmartObject">SmartObject</option>
+                <option value="Application">Application</option>
+            </select>
+          </div>
+        <div class="form-row">
+            <label for="node-input-description"><i class="fa fa-file-text"></i> Description</label>
+            <input type="text" id="node-input-description" placeholder="What is this Object">
+        </div>
+        <div class="form-row">
+          <label><i class="fa fa-cogs"></i> Client</label>
+          <input type="checkbox" id="node-input-msbDebugLogging" style="display:inline-block; width:22px; vertical-align:baseline;">
+          <span>Log Level DEBUG</span>
+        </div>
+        <div class="form-row">
+          <label></label>
+          <input type="checkbox" id="node-input-msbEventCache" style="display:inline-block; width:22px; vertical-align:baseline;">
+          <span>Event Caching</span>
+        </div>
+        <div class="form-row">
+          <label></label>
+          <input type="text" id="node-input-msbEventCacheSize" placeholder="1000" style="display:inline-block; width:62px; vertical-align:baseline;">
+          <span>Event Cache Size (Nr of Events)</span>
+        </div>
+        <div class="form-row">
+          <label></label>
+          <input type="checkbox" id="node-input-msbAutoReconnect" style="display:inline-block; width:22px; vertical-align:baseline;">
+          <span>Auto Reconnect</span>
+        </div>
+      </div>
+
+      <div id="msb-tab-eventList" style="display:none">
+        <div class="form-row" id="node-input-eventList-container-row">
+          <div id="node-input-eventList-container-div">
+            <ol id="node-input-eventList-container" style="list-style-type:none;margin:0 auto;width:95%;margin-left:20px"></ol>
+          </div>
+        </div>
+        <div class="form-row">
+          <a href="#" class="editor-button editor-button-small" id="node-input-eventList-add" style="margin-top: 4px;"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+
+      <div id="msb-tab-functionList" style="display:none">
+        <div class="form-row" id="node-input-functionList-container-row">
+          <div id="node-input-functionList-container-div">
+            <ol id="node-input-functionList-container" style="list-style-type:none;margin:0 auto;width:95%;margin-left:20px"></ol>
+          </div>
+        </div>
+        <div class="form-row">
+        <input type="hidden" id="node-input-outputs"/>
+          <a href="#" class="editor-button editor-button-small" id="node-input-functionList-add" style="margin-top: 4px;"><i class="fa fa-plus"></i></a></ol>
+        </div>
+      </div>
+
+      <div id="msb-tab-configList" style="display:none">
+        <div class="form-row" id="node-input-configList-container-row">
+          <div id="node-input-configList-container-div">
+            <ol id="node-input-configList-container" style="list-style-type:none;margin:0 auto;width:95%;margin-left:20px"></ol>
+          </div>
+        </div>
+        <div class="form-row">
+          <a href="#" class="editor-button editor-button-small" id="node-input-configList-add" style="margin-top: 4px;"><i class="fa fa-plus"></i></a></ol>
+        </div>
+      </div>
+    </div>
+
+
+</script>
+
+<script type="text/x-red" data-help-name="msb-object">
+    <p>This node connects to a VFK MSB instance (Manufacturing Service Bus).</p>
+    <p>You can add events and functions for bidirectional communication, as well as configuration parameters to be changed via the MSB GUI.</p>
+    <p>The setup of the MSB client is based on the <a href="https://github.com/bartbutenaers/node-red-contrib-ui-svg">MSB client library for NodeJs</a>.</p>
+    <p>You can create UUIDs <a href="https://www.uuidgenerator.net/version4">here</a></p>
+</script>
