@@ -6,6 +6,7 @@
 
 # MSB integration in node-RED flows
 
+[![Build Status](https://travis-ci.org/research-virtualfortknox/node-red-contrib-msb.svg?branch=master)](https://travis-ci.org/research-virtualfortknox/node-red-contrib-msb)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb?ref=badge_shield)
 
 **Compatibility Matrix**
