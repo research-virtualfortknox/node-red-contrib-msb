@@ -34,7 +34,7 @@ You can use this integration to connect a node-RED flow to VFK MSB.
 Install npm package to your node-RED instance:
 
 ```sh
-npm install node-red-contrib-msb
+npm install @vfk_research/node-red-contrib-msb
 ```
 
 or add the ``node-red-contrib-msb`` package via the node-RED package manager.
