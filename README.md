@@ -6,7 +6,7 @@
 
 # MSB integration in node-RED flows
 
-[![Build Status](https://travis-ci.org/research-virtualfortknox/node-red-contrib-msb.svg?branch=master)](https://travis-ci.org/research-virtualfortknox/node-red-contrib-msb)
+[![Build Status](https://app.travis-ci.com/research-virtualfortknox/node-red-contrib-msb.svg?branch=master)](https://app.travis-ci.com/research-virtualfortknox/node-red-contrib-msb)
 [![npm version](https://badge.fury.io/js/%40vfk_research%2Fnode-red-contrib-msb.svg)](https://badge.fury.io/js/%40vfk_research%2Fnode-red-contrib-msb)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fresearch-virtualfortknox%2Fnode-red-contrib-msb?ref=badge_shield)
 
