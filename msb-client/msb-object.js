@@ -67,6 +67,9 @@ module.exports = function(RED) {
     if (config.msbEventCache === false){
       myMsbClient.disableEventCache(true);
       console.info("disable event cache")
+    } else {
+      myMsbClient.disableEventCache(false);
+      console.info("enable event cache")
     }
 
     // set event cache size (default = 1000 message events).
@@ -80,6 +83,9 @@ module.exports = function(RED) {
     if (config.msbAutoReconnect  === false){
       myMsbClient.disableAutoReconnect(true);
       console.info("disable reconnect")
+    } else {
+      myMsbClient.disableAutoReconnect(false);
+      console.info("enable reconnect")
     }
 
     // set the reconnect interval time (default = 10000 ms).
@@ -152,6 +158,9 @@ module.exports = function(RED) {
           dataFormat: dataFormat,
           implementation: function(msb_msg) {
             var msg_array = [];
+            if (msb_msg === undefined){
+              msb_msg = {}
+            }
             var new_msg = {
               payload: msb_msg.dataObject,
               msb_msg: msb_msg,
@@ -196,10 +205,10 @@ module.exports = function(RED) {
 						typeof msg.payload === 'number'
           ){
             // send with current format
-            myMsbClient.publish(msg.event.toUpperCase(), msg.payload, true);
+            myMsbClient.publish(msg.event.toUpperCase(), msg.payload, 0);
           } else {
             // send as string
-            myMsbClient.publish(msg.event.toUpperCase(), msg.payload.toString(), true);
+            myMsbClient.publish(msg.event.toUpperCase(), msg.payload.toString(), 0);
           }
         } catch (event_failure) {
           console.log('Could not publish event - maybe no such event?' + event_failure);

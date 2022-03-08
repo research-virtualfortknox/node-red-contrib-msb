@@ -6,7 +6,7 @@ module.exports = function(RED) {
     var node = this;
 
     node.on('input', function(msg) {
-      // on each input call, append the event id to teh message and output the message
+      // on each input call, append the event id to the message and output the message
       msg.event = config.event;
       node.send(msg);
     });
