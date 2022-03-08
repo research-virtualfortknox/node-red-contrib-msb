@@ -128,7 +128,7 @@ module.exports = function(RED) {
       myMsbClient.addEvent({
         eventId: value.name.toUpperCase(),
         name: value.name,
-        description: 'no description',
+        description: value.description,
         dataFormat: dataFormat,
         implementation: {
           priority: 'LOW',
@@ -154,7 +154,7 @@ module.exports = function(RED) {
         myMsbClient.addFunction({
           functionId: value.name.toUpperCase(),
           name: value.name,
-          description: 'no description',
+          description: value.description,
           dataFormat: dataFormat,
           implementation: function(msb_msg) {
             var msg_array = [];

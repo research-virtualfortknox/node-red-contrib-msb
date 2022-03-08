@@ -47,6 +47,7 @@
       eventCacheItems.each(function() {
         node.eventList.push({
           name: $(this).find('.eventListName').val(),
+          description: $(this).find('.eventListDescription').val(),
           dataTypeName: $(this).find('.eventListDataType').val(),
           schema: $(this).find('.eventListSchema').val(),
         });
@@ -67,6 +68,7 @@
       functionCacheItems.each(function() {
         node.functionList.push({
           name: $(this).find('.functionListName').val(),
+          description: $(this).find('.functionListDescription').val(),
           dataTypeName: $(this).find('.functionListDataType').val(),
           schema: $(this).find('.functionListSchema').val(),
           output: $(this).find('.functionListOutput').val(),
@@ -252,6 +254,15 @@
         }).appendTo(row);
         functionItemNameField.val(item.name);
 
+        let functionItemDescriptionField = $('<input/>', {
+          class: 'functionListDescription',
+          id: 'node-input-functionList-description' + id,
+          type: 'text',
+          style: 'margin:0 auto; width 20%;min-width:60px;margin-left:17px',
+          placeholder: 'Function Description',
+        }).appendTo(row);
+        functionItemDescriptionField.val(item.description);
+
         let functionItemDataTypeField = $('<select>', {
           class: 'functionListDataType',
           id: 'node-input-functionList-datatype' + id,
@@ -367,6 +378,15 @@
         }).appendTo(row);
         itemNameField.val(item.name);
 
+        let itemDescriptionField = $('<input/>', {
+          class: 'eventListDescription',
+          id: 'node-input-eventList-description' + id,
+          type: 'text',
+          style: 'margin:0 auto; width 20%;min-width:60px;margin-left:17px',
+          placeholder: 'Description',
+        }).appendTo(row);
+        itemDescriptionField.val(item.description);
+
         let itemDataTypeField = $('<select>', {
           class: 'eventListDataType',
           id: 'node-input-eventList-datatype' + id,
@@ -401,7 +421,7 @@
           class: 'eventListSchema',
           id: 'node-input-eventList-schema' + id,
           type: 'text',
-          style: 'margin-left:16px' + (item.dataTypeName === 'object' ? ';display:unset' : ';display:none'),
+          style: 'margin-left:17px' + (item.dataTypeName === 'object' ? ';display:unset' : ';display:none'),
           placeholder: '{ "dataObject": { "type": "object", "properties": { "name": { "type": "string" } } } }',
         }).appendTo(schemaContainer);
         itemSchemaField.val(item.schema);
