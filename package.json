@@ -14,8 +14,8 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-html": "^6.0.2",
-    "eslint-config-strongloop": "^2.1.0"
+    "eslint-config-strongloop": "^2.1.0",
+    "eslint-plugin-html": "^6.0.2"
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore  --ext .html ."
@@ -45,5 +45,8 @@
   },
   "bugs": {
     "url": "https://github.com/research-virtualfortknox/node-red-contrib-msb/issues"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }

@@ -1,0 +1,32 @@
+{
+    "name": "@vfk_research/node-red-contrib-msb-dev-container",
+    "description": "Just to setup the dev container",
+    "version": "0.0.1-dev",
+    "author": "Matthias Stöhr",
+    "license": "Apache-2.0",
+    "homepage": "https://research.virtualfortknox.de/",
+    "main": "node_modules/node-red/red/red.js",
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        "debug": "node --inspect=0.0.0.0:9229 $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        "debug_brk": "node --inspect=0.0.0.0:9229 --inspect-brk $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"
+    },
+    "dependencies": {
+        "node-red": "2.2.2",
+        "node-red-contrib-loop-processing": "0.5.1",
+        "node-red-dashboard": "3.1.2",
+        "node-red-contrib-moment": "4.0.0",
+        "node-red-node-base64": "0.3.0",
+        "node-red-contrib-msg-speed": "2.1.0",
+        "node-red-contrib-ui-svg": "git://github.com/bartbutenaers/node-red-contrib-ui-svg.git#aaedf21b26b9e6c6b3b15836f7c4380cc21ee9f2"
+    },
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    },
+    "engines": {
+        "node": ">=14"
+    }
+}

@@ -1,0 +1,2608 @@
+[
+    {
+        "id": "d6c1413b9165572b",
+        "type": "tab",
+        "label": "Press Process",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2d2cc1a393ea7be7",
+        "type": "tab",
+        "label": "MSB Communication",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "aeb72ed85b15081a",
+        "type": "tab",
+        "label": "Settings",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "db2754d5.e6c8a8",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8f0bfaad.f663f8",
+        "type": "group",
+        "z": "aeb72ed85b15081a",
+        "name": "Initialize and edit sensor refresh interval",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a2eeb59f.5d5be8",
+            "c6a127d6.c25b48",
+            "7c560830.b6fac8",
+            "49d3244c.3d712c",
+            "faa7fb5e.cebc88"
+        ],
+        "env": [],
+        "x": 74,
+        "y": 79
+    },
+    {
+        "id": "f6ebfc84302c316e",
+        "type": "group",
+        "z": "d6c1413b9165572b",
+        "name": "prepare press",
+        "style": {
+            "label": true,
+            "fill": "#bfdbef",
+            "fill-opacity": "0.5"
+        },
+        "nodes": [
+            "6e8e0b2358640487",
+            "bbf06fb89810e2d8"
+        ],
+        "env": [],
+        "x": 234,
+        "y": 219,
+        "w": 592,
+        "h": 82
+    },
+    {
+        "id": "49a4074409412788",
+        "type": "group",
+        "z": "d6c1413b9165572b",
+        "name": "run press process",
+        "style": {
+            "label": true,
+            "fill": "#bfdbef",
+            "fill-opacity": "0.5"
+        },
+        "nodes": [
+            "3222fcee40b0956c",
+            "7ae430c45b4b3944",
+            "44125482f9f12cc9",
+            "4c5f77495c172cf6",
+            "e59297b95c1c705b",
+            "279ca9f361f2e070",
+            "975cb206f9d903b0",
+            "eb9e1f8154f476ae"
+        ],
+        "env": [],
+        "x": 234,
+        "y": 339,
+        "w": 572,
+        "h": 322
+    },
+    {
+        "id": "29875532469d0d86",
+        "type": "group",
+        "z": "d6c1413b9165572b",
+        "name": "pressed",
+        "style": {
+            "label": true,
+            "fill": "#bfdbef",
+            "fill-opacity": "0.5"
+        },
+        "nodes": [
+            "b1dd6a8c07d920ab",
+            "473a1c996be1d8eb"
+        ],
+        "env": [],
+        "x": 234,
+        "y": 699,
+        "w": 532,
+        "h": 82
+    },
+    {
+        "id": "2546d8247994320c",
+        "type": "group",
+        "z": "d6c1413b9165572b",
+        "name": "release press",
+        "style": {
+            "label": true,
+            "fill": "#bfdbef",
+            "fill-opacity": "0.5"
+        },
+        "nodes": [
+            "b429d7ae8ee853bb",
+            "a9204b3f0e79ab36"
+        ],
+        "env": [],
+        "x": 234,
+        "y": 819,
+        "w": 672,
+        "h": 82
+    },
+    {
+        "id": "5b46f7b013ee65ae",
+        "type": "group",
+        "z": "d6c1413b9165572b",
+        "name": "demo press dashboard",
+        "style": {
+            "fill": "#e3f3d3",
+            "fill-opacity": "0.35",
+            "label": true
+        },
+        "nodes": [
+            "840bfaef06970e7c",
+            "be571505b99ea1c5",
+            "865a4863c72641d0",
+            "0abce410dbecd5f1",
+            "4f1de23d11af668a",
+            "c062763a769cd50a",
+            "090828d8328ab1f8",
+            "bda515bb6a3adef0",
+            "0bbc013c79e4d11f",
+            "3fb1dd3fc4bb5883",
+            "13c5dd3c856f1b10",
+            "b9dc918c6c016fc6",
+            "05b9e15cad646c4a",
+            "c6f71fd265768443"
+        ],
+        "env": [],
+        "x": 234,
+        "y": 1099,
+        "w": 1012,
+        "h": 322
+    },
+    {
+        "id": "f7efeb66a5924e8d",
+        "type": "group",
+        "z": "d6c1413b9165572b",
+        "name": "Trigger press state update",
+        "style": {
+            "label": true,
+            "fill": "#dbcbe7",
+            "fill-opacity": "0.35"
+        },
+        "nodes": [
+            "03995841d6a18f4f",
+            "be3dd890235697fe",
+            "83a54e4d7bcfd68e",
+            "26fa4bd6b63d8074",
+            "537c367ce25ee17c",
+            "84700182266c40e3",
+            "01fcf4510c45989a"
+        ],
+        "env": [],
+        "x": 994,
+        "y": 99,
+        "w": 176,
+        "h": 802
+    },
+    {
+        "id": "577a5a9ec60fc056",
+        "type": "group",
+        "z": "aeb72ed85b15081a",
+        "name": "initlialize global press state",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6e111ac3fe28f4fc",
+            "e765ec88bf15c6ee"
+        ],
+        "env": [],
+        "x": 74,
+        "y": 319
+    },
+    {
+        "id": "5239b1db95e1b340",
+        "type": "group",
+        "z": "aeb72ed85b15081a",
+        "name": "Firmware update",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "856f9377df36f160",
+            "d2a8cf2bce34117b",
+            "33594e19958ba8cc",
+            "80df37bab42fa0d3",
+            "8046ad89d7945fcb",
+            "3ac3f3d1128ff165",
+            "b6160c26b2e9e9ed",
+            "4191f05cf3cc9d80",
+            "b47247ac08406d55",
+            "d091353d10af0f1d",
+            "26c46547c863efdf",
+            "340c9a4e5cafd41f",
+            "473ee5cd901b5e77",
+            "dbc37f34ad687b66",
+            "e2add91d44620d2d",
+            "7fcf62d3ec380732",
+            "096220c1e1283fcd",
+            "d80466556a391f13"
+        ],
+        "env": [],
+        "x": 74,
+        "y": 439
+    },
+    {
+        "id": "df6a6930.03c9c8",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "a01de465.297858",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "eede15c8.663048",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "a01de465.297858",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e3a15d6d.48b0e",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "a01de465.297858",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a01de465.297858",
+        "type": "ui_tab",
+        "name": "Press Demo",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3e061837e11fe21c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Emulator Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "none",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a28ed738.b84c48",
+        "type": "ui_group",
+        "name": "Basic Configuration",
+        "tab": "8393c7fd.c92458",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8393c7fd.c92458",
+        "type": "ui_tab",
+        "name": "Settings",
+        "icon": "settings",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6317c6fa28b2181e",
+        "type": "ui_group",
+        "name": "Firmware",
+        "tab": "8393c7fd.c92458",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "840bfaef06970e7c",
+        "type": "ui_svg_graphics",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "group": "df6a6930.03c9c8",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "svgString": "<svg x=\"0\" y=\"0\" height=\"350\" viewBox=\"-0.04032258064515237 0 250.0806451612903 350\" width=\"250\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" preserveAspectRatio=\"xMidYMid meet\">\n  <rect id=\"svgEditorBackground\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" style=\"fill:none; stroke: none;\" />\n  <rect x=\"24.4768\" y=\"29.7427\" style=\"fill:#DBDBDB;stroke:black;stroke-width:1px;\" id=\"e1_rectangle\" width=\"197.628\" height=\"269.784\" />\n  <rect x=\"81.862\" y=\"230.934\" style=\"fill:#4D4D4D;stroke:black;stroke-width:1px;\" id=\"e2_rectangle\" width=\"85.806\" height=\"68.306\" />\n  <rect x=\"112.345\" y=\"219.644\" style=\"fill:rosybrown;stroke:black;stroke-width:1px;\" id=\"svg_workpiece\" width=\"25.403\" height=\"13.548\" />\n  <polygon style=\"stroke:black;fill:#595959;stroke-width:1px;\" points=\"24.281,29.966 24.281,107.305 113.475,106.176 114.039,176.741 134.926,176.741 134.926,105.612 221.297,107.305 221.862,29.402\" id=\"e1_polygon\" />\n  <polygon style=\"stroke: black; fill: rgb(140, 140, 140); stroke-width: 1px;\" id=\"svg_press_element\" points=\"107.829,108.999 107.265,178.435 90.3291,178.999 90.3291,197.628 160.894,197.063 160.33,178.998 142.265,178.434 141.136,108.998\" />\n\n    <animate \n       xlink:href=\"#svg_press_element\"\n       attributeName=\"points\"\n       from=\"107.829,108.999 107.265,178.435 90.3291,178.999 90.3291,197.628 160.894,197.063 160.33,178.998 142.265,178.434 141.136,108.998\"\n       to=\"107.829,139.483 107.265,208.919 90.3291,209.483 90.3291,228.112 160.894,227.547 160.33,209.482 142.265,208.918 141.136,139.482\" \n       dur=\"6s\"\n       begin=\"unload\"\n       fill=\"freeze\"\n       id=\"press_down_anim\"/>\n       \n    <animate \n       xlink:href=\"#svg_press_element\"\n       attributeName=\"points\"\n       from=\"107.829,139.483 107.265,208.919 90.3291,209.483 90.3291,228.112 160.894,227.547 160.33,209.482 142.265,208.918 141.136,139.482\"\n       to=\"107.829,108.999 107.265,178.435 90.3291,178.999 90.3291,197.628 160.894,197.063 160.33,178.998 142.265,178.434 141.136,108.998\" \n       dur=\"4s\"\n       begin=\"press_down_anim.begin + 7s\"\n       fill=\"freeze\" \n       id=\"press_up_anim\"/>\n       \n    <animate \n       xlink:href=\"#svg_workpiece\"\n       attributeName=\"opacity\"\n       from=\"0\"\n       to=\"1\" \n       dur=\"0.5s\"\n       fill=\"freeze\" \n       id=\"workpiece_show_anim\"/>\n       \n    <animate \n       xlink:href=\"#svg_workpiece\"\n       attributeName=\"opacity\"\n       from=\"1\"\n       to=\"0\" \n       dur=\"0.5s\"\n       fill=\"freeze\" \n       id=\"workpiece_hide_anim\"/>\n\n</svg>",
+        "clickableShapes": [],
+        "smilAnimations": [],
+        "bindings": [],
+        "showCoordinates": false,
+        "autoFormatAfterEdit": true,
+        "outputField": "payload",
+        "editorUrl": "http://drawsvg.org/drawsvg.html",
+        "directory": "",
+        "mouseWheelZoomEnabled": false,
+        "name": "Machine SVG",
+        "x": 1140,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be571505b99ea1c5",
+        "type": "switch",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "Workpiece State",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "no_workpiece",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ready_for_pressing",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "under_pressure",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "pressed",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 630,
+        "y": 1340,
+        "wires": [
+            [],
+            [
+                "0abce410dbecd5f1"
+            ],
+            [
+                "865a4863c72641d0"
+            ],
+            [
+                "4f1de23d11af668a"
+            ]
+        ]
+    },
+    {
+        "id": "865a4863c72641d0",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "Start Press Down Anim",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[{\"command\":\"trigger_animation\",\"selector\":\"#press_down_anim\",\"action\":\"start\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 887,
+        "y": 1340,
+        "wires": [
+            [
+                "840bfaef06970e7c"
+            ]
+        ]
+    },
+    {
+        "id": "0abce410dbecd5f1",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "Show Workpiece Anim",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[{\"command\":\"trigger_animation\",\"selector\":\"#workpiece_show_anim\",\"action\":\"start\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 887,
+        "y": 1300,
+        "wires": [
+            [
+                "840bfaef06970e7c"
+            ]
+        ]
+    },
+    {
+        "id": "4f1de23d11af668a",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "Hide Workpiece Anim",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[{\"command\":\"trigger_animation\",\"selector\":\"#workpiece_hide_anim\",\"action\":\"start\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 887,
+        "y": 1380,
+        "wires": [
+            [
+                "840bfaef06970e7c"
+            ]
+        ]
+    },
+    {
+        "id": "c062763a769cd50a",
+        "type": "ui_text",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "group": "df6a6930.03c9c8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Workpiece State",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 630,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "090828d8328ab1f8",
+        "type": "ui_gauge",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "",
+        "group": "e3a15d6d.48b0e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "60",
+        "seg2": "100",
+        "x": 610,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "bda515bb6a3adef0",
+        "type": "ui_gauge",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "",
+        "group": "eede15c8.663048",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "gtype": "wave",
+        "title": "Press Force",
+        "label": "kN",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "450",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "150",
+        "seg2": "300",
+        "x": 610,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "0bbc013c79e4d11f",
+        "type": "ui_chart",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "",
+        "group": "eede15c8.663048",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "750",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 725,
+        "y": 1140,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "3fb1dd3fc4bb5883",
+        "type": "ui_chart",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "",
+        "group": "e3a15d6d.48b0e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 725,
+        "y": 1180,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "fc6aea680ad7d9b2",
+        "type": "ui_button",
+        "z": "d6c1413b9165572b",
+        "name": "",
+        "group": "df6a6930.03c9c8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Start Process",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Start Process",
+        "payloadType": "str",
+        "topic": "",
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "93e56a7d3916536b"
+            ]
+        ]
+    },
+    {
+        "id": "8cbe52e75643f911",
+        "type": "template",
+        "z": "d6c1413b9165572b",
+        "name": "initial process state template",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  \"state\": \"busy\",\n  \"pressForce\": 0,\n  \"minPressForce\": 0,\n  \"maxPressForce\": 400,\n  \"temperature\": 15,\n  \"minTemperature\": 15,\n  \"maxTemperature\": 75,\n  \"processSteps\": 100,\n  \"workpieceState\": \"no_workpiece\"\n}",
+        "output": "json",
+        "x": 610,
+        "y": 140,
+        "wires": [
+            [
+                "bbf06fb89810e2d8",
+                "be3dd890235697fe"
+            ]
+        ]
+    },
+    {
+        "id": "50959722d214fbe5",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "name": "update global press state",
+        "rules": [
+            {
+                "t": "set",
+                "p": "press.state",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 1000,
+        "wires": [
+            [
+                "13c5dd3c856f1b10",
+                "b9dc918c6c016fc6",
+                "05b9e15cad646c4a"
+            ]
+        ]
+    },
+    {
+        "id": "1ae131f9ffa0d33d",
+        "type": "template",
+        "z": "d6c1413b9165572b",
+        "name": "press state template",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  \"state\": \"{{payload.state}}\",\n  \"pressForce\": {{payload.pressForce}},\n  \"temperature\": {{payload.temperature}},\n  \"workpieceState\": \"{{payload.workpieceState}}\"\n}",
+        "output": "json",
+        "x": 280,
+        "y": 1000,
+        "wires": [
+            [
+                "50959722d214fbe5"
+            ]
+        ]
+    },
+    {
+        "id": "6e8e0b2358640487",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "f6ebfc84302c316e",
+        "name": "workpieceState = ready_for_pressing (busy)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.workpieceState",
+                "pt": "msg",
+                "to": "ready_for_pressing",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.state",
+                "pt": "msg",
+                "to": "busy",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 260,
+        "wires": [
+            [
+                "3222fcee40b0956c",
+                "83a54e4d7bcfd68e"
+            ]
+        ]
+    },
+    {
+        "id": "bbf06fb89810e2d8",
+        "type": "delay",
+        "z": "d6c1413b9165572b",
+        "g": "f6ebfc84302c316e",
+        "name": "prepare press",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "6e8e0b2358640487"
+            ]
+        ]
+    },
+    {
+        "id": "3222fcee40b0956c",
+        "type": "delay",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "start press",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 380,
+        "wires": [
+            [
+                "7ae430c45b4b3944"
+            ]
+        ]
+    },
+    {
+        "id": "7ae430c45b4b3944",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "workpieceState = under_pressure (busy)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.workpieceState",
+                "pt": "msg",
+                "to": "under_pressure",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.state",
+                "pt": "msg",
+                "to": "busy",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 380,
+        "wires": [
+            [
+                "44125482f9f12cc9",
+                "26fa4bd6b63d8074"
+            ]
+        ]
+    },
+    {
+        "id": "03995841d6a18f4f",
+        "type": "link out",
+        "z": "d6c1413b9165572b",
+        "g": "f7efeb66a5924e8d",
+        "name": "update state out",
+        "mode": "link",
+        "links": [
+            "34c4663d033ffd8c"
+        ],
+        "x": 1035,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "34c4663d033ffd8c",
+        "type": "link in",
+        "z": "d6c1413b9165572b",
+        "name": "update stae in",
+        "links": [
+            "03995841d6a18f4f",
+            "be3dd890235697fe",
+            "83a54e4d7bcfd68e",
+            "26fa4bd6b63d8074",
+            "537c367ce25ee17c",
+            "84700182266c40e3",
+            "01fcf4510c45989a"
+        ],
+        "x": 135,
+        "y": 1000,
+        "wires": [
+            [
+                "1ae131f9ffa0d33d"
+            ]
+        ]
+    },
+    {
+        "id": "93e56a7d3916536b",
+        "type": "switch",
+        "z": "d6c1413b9165572b",
+        "name": "is ready?",
+        "property": "press.state.state",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "busy",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "ade4fc2036fabcc8"
+            ],
+            [
+                "8cbe52e75643f911"
+            ]
+        ]
+    },
+    {
+        "id": "44125482f9f12cc9",
+        "type": "counter-loop",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "loop through press process",
+        "counter": "processStepCounter",
+        "counterType": "msg",
+        "reset": false,
+        "resetValue": "value-null",
+        "initial": 0,
+        "initialType": "num",
+        "operator": "lt",
+        "termination": "payload.processSteps",
+        "terminationType": "msg",
+        "increment": 1,
+        "incrementType": "num",
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "279ca9f361f2e070"
+            ],
+            [
+                "e59297b95c1c705b"
+            ]
+        ]
+    },
+    {
+        "id": "4c5f77495c172cf6",
+        "type": "function",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "process step",
+        "func": "const processStepCounter = msg.processStepCounter\nconst processSteps = msg.payload.processSteps\nvar pressForce = msg.payload.pressForce\nconst minPressForce = msg.payload.minPressForce\nconst maxPressForce = msg.payload.maxPressForce\nvar temperature = msg.payload.temperature\nconst minTemperature = msg.payload.minTemperature\nconst maxTemperature = msg.payload.maxTemperature\n\nif(processStepCounter < ( processSteps / 2)){\n    // increase press force\n    pressForce = pressForce + randomInteger(0, processStepCounter)\n    pressForce = ( pressForce > maxPressForce ? maxPressForce : pressForce)\n} else {\n    // decrease press force\n    pressForce = pressForce - randomInteger(0, processStepCounter)\n    pressForce = ( pressForce < minPressForce ? minPressForce : pressForce)\n    \n}\n//console.log(\"Press Force: \" + pressForce)\n// emulate temperature during process\nif(processStepCounter < ( processSteps / 1.5)){\n    // increase temperature\n    temperature = temperature + randomInteger(0, 2)\n    temperature = ( temperature > maxTemperature ? maxTemperature : temperature)\n} else {\n    // decrease temperature\n    temperature = temperature - randomInteger(0, 1)\n    temperature = ( temperature < minTemperature ? minTemperature : temperature)\n}\n\nfunction randomInteger(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nmsg.payload.pressForce = pressForce\nmsg.payload.temperature = temperature\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 500,
+        "wires": [
+            [
+                "44125482f9f12cc9",
+                "537c367ce25ee17c"
+            ]
+        ]
+    },
+    {
+        "id": "e59297b95c1c705b",
+        "type": "delay",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "run a process step",
+        "pauseType": "delay",
+        "timeout": "150",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 500,
+        "wires": [
+            [
+                "4c5f77495c172cf6"
+            ]
+        ]
+    },
+    {
+        "id": "279ca9f361f2e070",
+        "type": "while-loop",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "while cool down",
+        "condi": "msg.payload.temperature > msg.payload.minTemperature",
+        "limit": false,
+        "limitTime": 10000,
+        "time": "wl279ca9f361f2e070",
+        "timeType": "msg",
+        "x": 340,
+        "y": 560,
+        "wires": [
+            [
+                "473a1c996be1d8eb"
+            ],
+            [
+                "975cb206f9d903b0"
+            ]
+        ]
+    },
+    {
+        "id": "975cb206f9d903b0",
+        "type": "delay",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "run a cool down step",
+        "pauseType": "delay",
+        "timeout": "150",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 620,
+        "wires": [
+            [
+                "eb9e1f8154f476ae"
+            ]
+        ]
+    },
+    {
+        "id": "eb9e1f8154f476ae",
+        "type": "function",
+        "z": "d6c1413b9165572b",
+        "g": "49a4074409412788",
+        "name": "cool down",
+        "func": "var temperature = msg.payload.temperature\nconst minTemperature = msg.payload.minTemperature\n\ntemperature = temperature - randomInteger(0, 1)\ntemperature = ( temperature < minTemperature ? minTemperature : temperature)\n\nfunction randomInteger(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nmsg.payload.temperature = temperature\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "279ca9f361f2e070",
+                "84700182266c40e3"
+            ]
+        ]
+    },
+    {
+        "id": "b1dd6a8c07d920ab",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "29875532469d0d86",
+        "name": "workpieceState = pressed(busy)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.workpieceState",
+                "pt": "msg",
+                "to": "pressed",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.state",
+                "pt": "msg",
+                "to": "busy",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 740,
+        "wires": [
+            [
+                "a9204b3f0e79ab36",
+                "01fcf4510c45989a"
+            ]
+        ]
+    },
+    {
+        "id": "473a1c996be1d8eb",
+        "type": "delay",
+        "z": "d6c1413b9165572b",
+        "g": "29875532469d0d86",
+        "name": "wait for pressed",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 740,
+        "wires": [
+            [
+                "b1dd6a8c07d920ab"
+            ]
+        ]
+    },
+    {
+        "id": "b429d7ae8ee853bb",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "2546d8247994320c",
+        "name": "workpieceState = no_workpiece (ready)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.workpieceState",
+                "pt": "msg",
+                "to": "no_workpiece",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.state",
+                "pt": "msg",
+                "to": "ready",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 860,
+        "wires": [
+            [
+                "03995841d6a18f4f"
+            ]
+        ]
+    },
+    {
+        "id": "a9204b3f0e79ab36",
+        "type": "delay",
+        "z": "d6c1413b9165572b",
+        "g": "2546d8247994320c",
+        "name": "wait for press ready for next run",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 390,
+        "y": 860,
+        "wires": [
+            [
+                "b429d7ae8ee853bb"
+            ]
+        ]
+    },
+    {
+        "id": "c9b4c9ee067b880c",
+        "type": "ui_toast",
+        "z": "d6c1413b9165572b",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "alert porcess already running",
+        "x": 810,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ade4fc2036fabcc8",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "name": "info message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Press process already running. Please wait!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 80,
+        "wires": [
+            [
+                "c9b4c9ee067b880c"
+            ]
+        ]
+    },
+    {
+        "id": "13c5dd3c856f1b10",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "get pressForce",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.pressForce",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 1140,
+        "wires": [
+            [
+                "bda515bb6a3adef0",
+                "0bbc013c79e4d11f"
+            ]
+        ]
+    },
+    {
+        "id": "b9dc918c6c016fc6",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "get temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 1180,
+        "wires": [
+            [
+                "090828d8328ab1f8",
+                "3fb1dd3fc4bb5883"
+            ]
+        ]
+    },
+    {
+        "id": "05b9e15cad646c4a",
+        "type": "change",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "get workpieceState",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.workpieceState",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 1220,
+        "wires": [
+            [
+                "c062763a769cd50a",
+                "c6f71fd265768443"
+            ]
+        ]
+    },
+    {
+        "id": "c6f71fd265768443",
+        "type": "rbe",
+        "z": "d6c1413b9165572b",
+        "g": "5b46f7b013ee65ae",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 450,
+        "y": 1340,
+        "wires": [
+            [
+                "be571505b99ea1c5"
+            ]
+        ]
+    },
+    {
+        "id": "be3dd890235697fe",
+        "type": "link out",
+        "z": "d6c1413b9165572b",
+        "g": "f7efeb66a5924e8d",
+        "name": "update state out",
+        "mode": "link",
+        "links": [
+            "34c4663d033ffd8c"
+        ],
+        "x": 1035,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "83a54e4d7bcfd68e",
+        "type": "link out",
+        "z": "d6c1413b9165572b",
+        "g": "f7efeb66a5924e8d",
+        "name": "update state out",
+        "mode": "link",
+        "links": [
+            "34c4663d033ffd8c"
+        ],
+        "x": 1035,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "26fa4bd6b63d8074",
+        "type": "link out",
+        "z": "d6c1413b9165572b",
+        "g": "f7efeb66a5924e8d",
+        "name": "update state out",
+        "mode": "link",
+        "links": [
+            "34c4663d033ffd8c"
+        ],
+        "x": 1035,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "537c367ce25ee17c",
+        "type": "link out",
+        "z": "d6c1413b9165572b",
+        "g": "f7efeb66a5924e8d",
+        "name": "update state out",
+        "mode": "link",
+        "links": [
+            "34c4663d033ffd8c"
+        ],
+        "x": 1035,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "84700182266c40e3",
+        "type": "link out",
+        "z": "d6c1413b9165572b",
+        "g": "f7efeb66a5924e8d",
+        "name": "update state out",
+        "mode": "link",
+        "links": [
+            "34c4663d033ffd8c"
+        ],
+        "x": 1035,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "01fcf4510c45989a",
+        "type": "link out",
+        "z": "d6c1413b9165572b",
+        "g": "f7efeb66a5924e8d",
+        "name": "update state out",
+        "mode": "link",
+        "links": [
+            "34c4663d033ffd8c"
+        ],
+        "x": 1035,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "7c9f16ef9f17356a",
+        "type": "link in",
+        "z": "d6c1413b9165572b",
+        "name": "start process",
+        "links": [
+            "47edc72611ab48d5"
+        ],
+        "x": 155,
+        "y": 120,
+        "wires": [
+            [
+                "93e56a7d3916536b"
+            ]
+        ]
+    },
+    {
+        "id": "61dab31e500c3491",
+        "type": "msb-object",
+        "z": "2d2cc1a393ea7be7",
+        "name": "msb_nodered_demo_press_emulator",
+        "eventList": [
+            {
+                "name": "E_PRESS_FORCE",
+                "dataTypeName": "int32",
+                "schema": ""
+            },
+            {
+                "name": "E_TEMPERATURE",
+                "dataTypeName": "int32",
+                "schema": ""
+            },
+            {
+                "name": "E_WORKPIECE_STATE",
+                "dataTypeName": "object",
+                "schema": "{\"dataObject\":{\"type\":\"string\",\"enum\":[\"no_workpiece\",\"ready_for_pressing\",\"under_pressure\",\"pressed\"]}}"
+            },
+            {
+                "name": "E_START_PROCESS_DELAY_ACCEPTED",
+                "dataTypeName": "object",
+                "schema": "{\"dataObject\":{\"type\":\"object\",\"$ref\":\"#/definitions/Message\"},\"Message\":{\"type\":\"object\",\"properties\":{\"accepted\":{\"type\":\"boolean\"},\"info\":{\"type\":\"string\"},\"delay\":{\"type\":\"integer\",\"format\":\"int32\"}}}}"
+            },
+            {
+                "name": "E_FIRMWARE",
+                "dataTypeName": "object",
+                "schema": "{\"dataObject\":{\"type\":\"object\",\"$ref\":\"#/definitions/Firmware\"},\"Firmware\":{\"type\":\"object\",\"properties\":{\"provider\":{\"type\":\"string\"},\"lastUpdated\":{\"type\":\"string\",\"format\":\"date-time\"},\"version\":{\"type\":\"string\"}}}}"
+            }
+        ],
+        "configList": [],
+        "functionList": [
+            {
+                "name": "F_START_PROCESS",
+                "dataTypeName": "object",
+                "schema": "{}",
+                "output": "0"
+            },
+            {
+                "name": "F_START_PROCESS_DELAYED",
+                "dataTypeName": "int32",
+                "schema": "",
+                "output": "1"
+            }
+        ],
+        "uuid": "02b437f0-99c6-4d1e-bf04-977499fa6a6f",
+        "url": "http://host.docker.internal:8085",
+        "token": "bf04977499fa6a6f",
+        "description": "This is a demo press emulator based on NodeRed flows.",
+        "serviceType": "SmartObject",
+        "outputs": 3,
+        "msbDebugLogging": true,
+        "msbEventCache": true,
+        "msbEventCacheSize": 1000,
+        "msbAutoReconnect": true,
+        "x": 1070,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "47edc72611ab48d5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "57a1c858d20760fb",
+        "type": "msb-event",
+        "z": "2d2cc1a393ea7be7",
+        "name": "E_PRESS_FORCE",
+        "event": "E_PRESS_FORCE",
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "61dab31e500c3491"
+            ]
+        ]
+    },
+    {
+        "id": "ab46b1fc7e192d47",
+        "type": "msb-event",
+        "z": "2d2cc1a393ea7be7",
+        "name": "E_TEMPERATURE",
+        "event": "E_TEMPERATURE",
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "61dab31e500c3491"
+            ]
+        ]
+    },
+    {
+        "id": "45f4c5c85d137c7a",
+        "type": "msb-event",
+        "z": "2d2cc1a393ea7be7",
+        "name": "E_WORKPIECE_STATE",
+        "event": "E_WORKPIECE_STATE",
+        "x": 590,
+        "y": 220,
+        "wires": [
+            [
+                "61dab31e500c3491"
+            ]
+        ]
+    },
+    {
+        "id": "20741fc165094c58",
+        "type": "msb-event",
+        "z": "2d2cc1a393ea7be7",
+        "name": "E_START_PROCESS_DELAYED_ACCEPTED",
+        "event": "E_START_PROCESS_DELAY_ACCEPTED",
+        "x": 660,
+        "y": 260,
+        "wires": [
+            [
+                "61dab31e500c3491"
+            ]
+        ]
+    },
+    {
+        "id": "ceae0d8d45289c8b",
+        "type": "msb-event",
+        "z": "2d2cc1a393ea7be7",
+        "name": "E_FIRMWARE",
+        "event": "E_FIRMWARE",
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "61dab31e500c3491"
+            ]
+        ]
+    },
+    {
+        "id": "bc92564f6e1d168f",
+        "type": "inject",
+        "z": "2d2cc1a393ea7be7",
+        "name": "test",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "5a530d687a86b856",
+                "e80c76948adab4f7",
+                "d5046d6d180db6f3"
+            ]
+        ]
+    },
+    {
+        "id": "5a530d687a86b856",
+        "type": "template",
+        "z": "2d2cc1a393ea7be7",
+        "name": "prressForce",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{global.press.state.pressForce}}",
+        "output": "json",
+        "x": 330,
+        "y": 140,
+        "wires": [
+            [
+                "57a1c858d20760fb"
+            ]
+        ]
+    },
+    {
+        "id": "e80c76948adab4f7",
+        "type": "template",
+        "z": "2d2cc1a393ea7be7",
+        "name": "temperature",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{global.press.state.temperature}}",
+        "output": "json",
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "ab46b1fc7e192d47"
+            ]
+        ]
+    },
+    {
+        "id": "d5046d6d180db6f3",
+        "type": "template",
+        "z": "2d2cc1a393ea7be7",
+        "name": "workpieceState",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "\"{{global.press.state.workpieceState}}\"",
+        "output": "json",
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "45f4c5c85d137c7a"
+            ]
+        ]
+    },
+    {
+        "id": "45e9313a4adecff3",
+        "type": "template",
+        "z": "2d2cc1a393ea7be7",
+        "name": "accepted",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"accepted\": {{payload.accepted}},\n    \"info\": \"{{payload.info}}\",\n    \"delay\": {{payload.delay}}\n}",
+        "output": "json",
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "20741fc165094c58"
+            ]
+        ]
+    },
+    {
+        "id": "a45e24fd71bf411f",
+        "type": "inject",
+        "z": "2d2cc1a393ea7be7",
+        "name": "test",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload.accepted",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload.info",
+                "v": "Press started (just a test message)",
+                "vt": "str"
+            },
+            {
+                "p": "payload.delay",
+                "v": "5000",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "45e9313a4adecff3"
+            ]
+        ]
+    },
+    {
+        "id": "f0e9ae75f3bfb2cd",
+        "type": "inject",
+        "z": "2d2cc1a393ea7be7",
+        "name": "test",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "6d88c0bb7d7a4ca4"
+            ]
+        ]
+    },
+    {
+        "id": "9feb70e4bd9eacb9",
+        "type": "template",
+        "z": "2d2cc1a393ea7be7",
+        "name": "firmware",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"provider\": \"{{global.press.firmware.provider}}\",\n    \"lastUpdated\": \"{{press.firmware.lastUpdated}}\",\n    \"version\": \"{{global.press.firmware.version}}\"\n}",
+        "output": "json",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "ceae0d8d45289c8b"
+            ]
+        ]
+    },
+    {
+        "id": "6d88c0bb7d7a4ca4",
+        "type": "moment",
+        "z": "2d2cc1a393ea7be7",
+        "name": "msb format",
+        "topic": "",
+        "input": "press.firmware.lastUpdated",
+        "inputType": "global",
+        "inTz": "Europe/Berlin",
+        "adjAmount": "1",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "press.firmware.lastUpdated",
+        "outputType": "msg",
+        "outTz": "Europe/Berlin",
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "9feb70e4bd9eacb9"
+            ]
+        ]
+    },
+    {
+        "id": "47edc72611ab48d5",
+        "type": "link out",
+        "z": "2d2cc1a393ea7be7",
+        "name": "start process",
+        "mode": "link",
+        "links": [
+            "7c9f16ef9f17356a"
+        ],
+        "x": 1365,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a2eeb59f.5d5be8",
+        "type": "inject",
+        "z": "aeb72ed85b15081a",
+        "g": "8f0bfaad.f663f8",
+        "name": "on start",
+        "props": [
+            {
+                "p": "payload.sensorRefreshInterval",
+                "v": "settings.sensorRefreshInterval",
+                "vt": "global"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 180,
+        "y": 120,
+        "wires": [
+            [
+                "49d3244c.3d712c"
+            ]
+        ]
+    },
+    {
+        "id": "c6a127d6.c25b48",
+        "type": "ui_form",
+        "z": "aeb72ed85b15081a",
+        "g": "8f0bfaad.f663f8",
+        "name": "",
+        "label": "Refresh Intervals (Publish Intervals)",
+        "group": "a28ed738.b84c48",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Sensor Refresh Interval (ms)",
+                "value": "sensorRefreshInterval",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "sensorRefreshInterval": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "",
+        "topic": "",
+        "topicType": "str",
+        "splitLayout": false,
+        "className": "",
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "7c560830.b6fac8"
+            ]
+        ]
+    },
+    {
+        "id": "7c560830.b6fac8",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "8f0bfaad.f663f8",
+        "name": "set global setting sensorRefreshInterval",
+        "rules": [
+            {
+                "t": "set",
+                "p": "settings.sensorRefreshInterval",
+                "pt": "global",
+                "to": "payload.sensorRefreshInterval",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 240,
+        "wires": [
+            [
+                "49d3244c.3d712c"
+            ]
+        ]
+    },
+    {
+        "id": "49d3244c.3d712c",
+        "type": "switch",
+        "z": "aeb72ed85b15081a",
+        "g": "8f0bfaad.f663f8",
+        "name": "check if setting need to be initialized",
+        "property": "payload.sensorRefreshInterval",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "faa7fb5e.cebc88"
+            ],
+            [
+                "c6a127d6.c25b48"
+            ]
+        ]
+    },
+    {
+        "id": "faa7fb5e.cebc88",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "8f0bfaad.f663f8",
+        "name": "initialize setting sensorRefreshInterval",
+        "rules": [
+            {
+                "t": "set",
+                "p": "settings.sensorRefreshInterval",
+                "pt": "global",
+                "to": "5000",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.sensorRefreshInterval",
+                "pt": "msg",
+                "to": "5000",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 120,
+        "wires": [
+            [
+                "c6a127d6.c25b48"
+            ]
+        ]
+    },
+    {
+        "id": "6e111ac3fe28f4fc",
+        "type": "inject",
+        "z": "aeb72ed85b15081a",
+        "g": "577a5a9ec60fc056",
+        "name": "on start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"state\":\"ready\",\"pressForce\":0,\"temperature\":15,\"workpieceState\":\"no_workpiece\"}",
+        "payloadType": "json",
+        "x": 180,
+        "y": 360,
+        "wires": [
+            [
+                "e765ec88bf15c6ee"
+            ]
+        ]
+    },
+    {
+        "id": "e765ec88bf15c6ee",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "577a5a9ec60fc056",
+        "name": "set global press state",
+        "rules": [
+            {
+                "t": "set",
+                "p": "press.state",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "856f9377df36f160",
+        "type": "ui_template",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "group": "6317c6fa28b2181e",
+        "name": "progressbar",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "format": "<style>\n    .w3-border {\n        border: 1px solid #ccc!important;\n    }\n    .w3-green, .w3-hover-green:hover {\n        color: #fff!important;\n        background-color: #4CAF50!important;\n    }\n</style>\n<div>\n    <div class=\"w3-border\">\n      <div class=\"w3-green\" style=\"height:24px; width:{{msg.updateCounter}}%\"></div>\n      <span ng-if=\"msg.counter === null\">COMPLETE !</span>\n    </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 730,
+        "y": 620,
+        "wires": [
+            [
+                "8046ad89d7945fcb"
+            ]
+        ]
+    },
+    {
+        "id": "d2a8cf2bce34117b",
+        "type": "counter-loop",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "",
+        "counter": "updateCounter",
+        "counterType": "msg",
+        "reset": true,
+        "resetValue": "value-null",
+        "initial": "1",
+        "initialType": "num",
+        "operator": "lt",
+        "termination": "100",
+        "terminationType": "num",
+        "increment": "1",
+        "incrementType": "num",
+        "x": 420,
+        "y": 620,
+        "wires": [
+            [
+                "856f9377df36f160",
+                "d091353d10af0f1d"
+            ],
+            [
+                "856f9377df36f160"
+            ]
+        ]
+    },
+    {
+        "id": "33594e19958ba8cc",
+        "type": "delay",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "emulate upgrade step progress",
+        "pauseType": "delay",
+        "timeout": "50",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 790,
+        "y": 740,
+        "wires": [
+            [
+                "d2a8cf2bce34117b"
+            ]
+        ]
+    },
+    {
+        "id": "80df37bab42fa0d3",
+        "type": "ui_button",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "start upgrade",
+        "group": "6317c6fa28b2181e",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Start Firmware Upgrade",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "d2a8cf2bce34117b"
+            ]
+        ]
+    },
+    {
+        "id": "8046ad89d7945fcb",
+        "type": "switch",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "continue if in upgrade process",
+        "property": "updateCounter",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 790,
+        "y": 680,
+        "wires": [
+            [
+                "33594e19958ba8cc"
+            ]
+        ]
+    },
+    {
+        "id": "3ac3f3d1128ff165",
+        "type": "inject",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "on start",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "b6160c26b2e9e9ed"
+            ]
+        ]
+    },
+    {
+        "id": "b6160c26b2e9e9ed",
+        "type": "switch",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "check if setting need to be initialized",
+        "property": "press.firmware.version",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 480,
+        "wires": [
+            [
+                "4191f05cf3cc9d80"
+            ],
+            [
+                "340c9a4e5cafd41f",
+                "dbc37f34ad687b66",
+                "e2add91d44620d2d"
+            ]
+        ]
+    },
+    {
+        "id": "4191f05cf3cc9d80",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "initialize setting press.firmware.version",
+        "rules": [
+            {
+                "t": "set",
+                "p": "press.firmware.version",
+                "pt": "global",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.press.firmware.version",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "press.firmware.provider",
+                "pt": "global",
+                "to": "DemoPressSolutions GmbH",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "press.firmware.lastUpdated",
+                "pt": "global",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 480,
+        "wires": [
+            [
+                "340c9a4e5cafd41f",
+                "dbc37f34ad687b66",
+                "e2add91d44620d2d"
+            ]
+        ]
+    },
+    {
+        "id": "b47247ac08406d55",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "set global setting press.firmware.lastUpdated",
+        "rules": [
+            {
+                "t": "set",
+                "p": "press.firmware.lastUpdated",
+                "pt": "global",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 820,
+        "wires": [
+            [
+                "dbc37f34ad687b66",
+                "e2add91d44620d2d"
+            ]
+        ]
+    },
+    {
+        "id": "d091353d10af0f1d",
+        "type": "function",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "count up version by 1",
+        "func": "var firmwareVersion = global.get(\"press.firmware.version\")\nfirmwareVersion = firmwareVersion + 1\nglobal.set(\"press.firmware.version\", firmwareVersion)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 820,
+        "wires": [
+            [
+                "b47247ac08406d55"
+            ]
+        ]
+    },
+    {
+        "id": "26c46547c863efdf",
+        "type": "ui_text",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "group": "6317c6fa28b2181e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Provider",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1500,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "340c9a4e5cafd41f",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "get provider",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "press.firmware.provider",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 560,
+        "wires": [
+            [
+                "26c46547c863efdf"
+            ]
+        ]
+    },
+    {
+        "id": "dbc37f34ad687b66",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "get lastUpdated",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "press.firmware.lastUpdated",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 600,
+        "wires": [
+            [
+                "096220c1e1283fcd"
+            ]
+        ]
+    },
+    {
+        "id": "473ee5cd901b5e77",
+        "type": "ui_text",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "group": "6317c6fa28b2181e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Last Updated",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1520,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e2add91d44620d2d",
+        "type": "change",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "get version",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "press.firmware.version",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 640,
+        "wires": [
+            [
+                "7fcf62d3ec380732"
+            ]
+        ]
+    },
+    {
+        "id": "7fcf62d3ec380732",
+        "type": "ui_text",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "group": "6317c6fa28b2181e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Version",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1500,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "096220c1e1283fcd",
+        "type": "moment",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "readable",
+        "topic": "",
+        "input": "payload",
+        "inputType": "msg",
+        "inTz": "Europe/Berlin",
+        "adjAmount": "1",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "Europe/Berlin",
+        "x": 1360,
+        "y": 600,
+        "wires": [
+            [
+                "473ee5cd901b5e77"
+            ]
+        ]
+    },
+    {
+        "id": "d80466556a391f13",
+        "type": "inject",
+        "z": "aeb72ed85b15081a",
+        "g": "5239b1db95e1b340",
+        "name": "on start",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "updateCounter",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 480,
+        "y": 580,
+        "wires": [
+            [
+                "856f9377df36f160"
+            ]
+        ]
+    }
+]
