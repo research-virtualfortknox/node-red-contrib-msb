@@ -21,12 +21,12 @@
           data.forEach(function(value) {
             if (node.configParam === value.name) {
               $('#node-input-configParam').append(
-                $('<option selected value=' + value.name + '>'
+                $('<option selected value="' + value.name + '">'
                       + value.name + '</option>')
               );
             } else {
               $('#node-input-configParam').append(
-                $('<option value=' + value.name + '>'
+                $('<option value="' + value.name + '">'
                       + value.name + '</option>')
               );
             }
