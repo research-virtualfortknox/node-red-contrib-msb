@@ -29,7 +29,7 @@ RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 #       copy your settings and flows files to that volume instead.
 COPY docker/settings.js /data/settings.js
 COPY docker/flows_cred.json /data/flows_cred.json
-COPY docker/flows.json /data/flows.json
+COPY doc/flows/test-flow.json /data/flows.json
 
 # Copy entrypoint.sh
 COPY docker/entrypoint.sh /data/entrypoint.sh

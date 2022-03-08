@@ -72,7 +72,7 @@ Try to avoid large Pull Requests as it will take longer to review them.
 ## Development Setup
 
 Requirements:
-- Setup [Node.js](http://nodejs.org) **version 8+**
+- Setup [Node.js](http://nodejs.org) **version 14+**
 - Setup [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - or use other Docker Hosts
 
