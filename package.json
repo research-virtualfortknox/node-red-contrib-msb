@@ -9,7 +9,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vfk_research/msb-client-websocket-nodejs": "^1.0.10",
+    "@vfk_research/msb-client-websocket-nodejs": "^1.0.11",
     "debug": "^4.3.3"
   },
   "devDependencies": {
