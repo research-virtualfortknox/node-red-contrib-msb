@@ -14,48 +14,57 @@
         "eventList": [
             {
                 "name": "SIMPLE_E1",
+                "description": "",
                 "dataTypeName": "string",
                 "schema": ""
             },
             {
                 "name": "SIMPLE_E2",
+                "description": "",
                 "dataTypeName": "boolean",
                 "schema": ""
             },
             {
                 "name": "SIMPLE_E3",
+                "description": "",
                 "dataTypeName": "int32",
                 "schema": ""
             },
             {
                 "name": "SIMPLE_E4",
+                "description": "",
                 "dataTypeName": "int64",
                 "schema": ""
             },
             {
                 "name": "SIMPLE_E5",
+                "description": "",
                 "dataTypeName": "float",
                 "schema": ""
             },
             {
                 "name": "SIMPLE_E6",
+                "description": "",
                 "dataTypeName": "double",
                 "schema": ""
             },
             {
                 "name": "SIMPLE_E7",
+                "description": "",
                 "dataTypeName": "byte",
                 "schema": ""
             },
             {
                 "name": "SIMPLE_E8",
+                "description": "",
                 "dataTypeName": "date-time",
                 "schema": ""
             },
             {
                 "name": "COMPLEX_E9",
+                "description": "",
                 "dataTypeName": "object",
-                "schema": "{\"dataObject\":{\"$ref\":\"#/definitions/MyDevice\"},\"MyDevice\":{\"type\":\"object\",\"properties\":{\"deviceName\":{\"type\":\"string\"},\"deviceWeight\":{\"type\":\"number\",\"format\":\"float\"},\"submodules\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyModule\"}}}},\"MyModule\":{\"type\":\"object\",\"properties\":{\"moduleName\":{\"type\":\"string\"}}}}"
+                "schema": "{\"dataObject\":{\"$ref\":\"#/definitions/MyDevice\"},\"MyDevice\":{\"type\":\"object\",\"properties\":{\"deviceName\":{\"type\":\"string\"},\"deviceWeight\":{\"type\":\"number\",\"format\":\"float\"},\"submodules\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyModule\"}}}},\"MyModule\":{\"type\":\"object\",\"properties\":{\"moduleName\":{\"type\":\"string\"},\"parts\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyPart\"}}}},\"MyPart\":{\"type\":\"object\",\"properties\":{\"partName\":{\"type\":\"string\"}}}}"
             }
         ],
         "configList": [
@@ -102,57 +111,66 @@
         ],
         "functionList": [
             {
-                "name": "SIMPLE_F1",
+                "name": "/SIMPLE_F1/test",
+                "description": "",
                 "dataTypeName": "string",
                 "schema": "",
                 "output": "0"
             },
             {
                 "name": "SIMPLE_F2",
+                "description": "",
                 "dataTypeName": "boolean",
                 "schema": "",
                 "output": "1"
             },
             {
                 "name": "SIMPLE_F3",
+                "description": "",
                 "dataTypeName": "int32",
                 "schema": "",
                 "output": "2"
             },
             {
                 "name": "SIMPLE_F4",
+                "description": "",
                 "dataTypeName": "int64",
                 "schema": "",
                 "output": "3"
             },
             {
                 "name": "SIMPLE_F5",
+                "description": "",
                 "dataTypeName": "float",
                 "schema": "",
                 "output": "4"
             },
             {
                 "name": "SIMPLE_F6",
+                "description": "",
                 "dataTypeName": "double",
                 "schema": "",
                 "output": "5"
             },
             {
                 "name": "SIMPLE_F7",
+                "description": "",
                 "dataTypeName": "byte",
                 "schema": "",
                 "output": "6"
             },
             {
                 "name": "SIMPLE_F8",
+                "description": "",
                 "dataTypeName": "date-time",
                 "schema": "",
                 "output": "7"
             },
             {
                 "name": "COMPLEX_F9",
+                "description": "",
                 "dataTypeName": "object",
-                "schema": "{\"dataObject\":{\"$ref\":\"#/definitions/MyDevice\"},\"MyDevice\":{\"type\":\"object\",\"properties\":{\"deviceName\":{\"type\":\"string\"},\"deviceWeight\":{\"type\":\"number\",\"format\":\"float\"},\"submodules\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyModule\"}}}},\"MyModule\":{\"type\":\"object\",\"properties\":{\"moduleName\":{\"type\":\"string\"}}}}",
+                "schema": "{\"dataObject\":{\"$ref\":\"#/definitions/MyDevice\"},\"MyDevice\":{\"type\":\"object\",\"properties\":{\"deviceName\":{\"type\":\"string\"},\"deviceWeight\":{\"type\":\"number\",\"format\":\"float\"},\"submodules\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyModule\"}}}},\"MyModule\":{\"type\":\"object\",\"properties\":{\"moduleName\":{\"type\":\"string\"},\"parts\":{\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/MyPart\"}}}},\"MyPart\":{\"type\":\"object\",\"properties\":{\"partName\":{\"type\":\"string\"}}}}",
                 "output": "8"
             }
         ],
@@ -333,13 +351,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "",
-        "topic": "",
-        "payload": "Hello World",
-        "payloadType": "str",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World",
+        "payloadType": "str",
         "x": 240,
         "y": 60,
         "wires": [
@@ -353,13 +371,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "",
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
         "x": 230,
         "y": 100,
         "wires": [
@@ -373,13 +391,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "",
-        "topic": "",
-        "payload": "3",
-        "payloadType": "num",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3",
+        "payloadType": "num",
         "x": 230,
         "y": 140,
         "wires": [
@@ -393,13 +411,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "Big Number",
-        "topic": "",
-        "payload": "9223372036854775807",
-        "payloadType": "num",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "9223372036854775807",
+        "payloadType": "num",
         "x": 250,
         "y": 180,
         "wires": [
@@ -413,13 +431,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "",
-        "topic": "",
-        "payload": "1.3",
-        "payloadType": "num",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1.3",
+        "payloadType": "num",
         "x": 230,
         "y": 220,
         "wires": [
@@ -433,13 +451,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "Big Double",
-        "topic": "",
-        "payload": "92233720368.22",
-        "payloadType": "num",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "92233720368.22",
+        "payloadType": "num",
         "x": 240,
         "y": 260,
         "wires": [
@@ -453,13 +471,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "",
-        "topic": "",
-        "payload": "0x77",
-        "payloadType": "str",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0x77",
+        "payloadType": "str",
         "x": 230,
         "y": 300,
         "wires": [
@@ -473,13 +491,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
         "x": 120,
         "y": 340,
         "wires": [
@@ -538,13 +556,22 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "Object",
-        "topic": "",
-        "payload": "{\"deviceName\":\"Device 1\",\"deviceWeight\":5.3,\"submodules\":[{\"moduleName\":\"Mod 1\"},{\"moduleName\":\"Mod 2\"},{\"moduleName\":\"Mod 3\"}]}",
-        "payloadType": "json",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"deviceName\":\"Device 1\",\"deviceWeight\":5.3,\"submodules\":[{\"moduleName\":\"Mod 1\",\"parts\":[{\"partName\":\"Part 1.1\"},{\"partName\":\"Part 1.2\"}]},{\"moduleName\":\"Mod 2\",\"parts\":[{\"partName\":\"Part 2.1\"}]},{\"moduleName\":\"Mod 3\",\"parts\":[{\"partName\":\"Part 3.1\"}]}]}",
+        "payloadType": "json",
         "x": 230,
         "y": 380,
         "wires": [
@@ -586,13 +613,13 @@
         "type": "inject",
         "z": "d02e6962.44164",
         "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
         "x": 565,
         "y": 460,
         "wires": [
