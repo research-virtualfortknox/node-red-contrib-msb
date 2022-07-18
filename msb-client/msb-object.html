@@ -71,6 +71,7 @@
           description: $(this).find('.functionListDescription').val(),
           dataTypeName: $(this).find('.functionListDataType').val(),
           schema: $(this).find('.functionListSchema').val(),
+          responseEvents: $(this).find('.functionListResponseEvents').val(),
           output: $(this).find('.functionListOutput').val(),
         });
       });
@@ -301,6 +302,15 @@
         }).appendTo(schemaContainer);
         itemSchemaField.val(item.schema);
 
+        let functionItemResponseEventsField = $('<input/>', {
+          class: 'functionListResponseEvents',
+          id: 'node-input-functionList-responseEvents' + id,
+          type: 'text',
+          style: 'margin-left:16px;',
+          placeholder: '["EVENT_X","EVENT_Y"]',
+        }).appendTo(row);
+        functionItemResponseEventsField.val(item.responseEvents);
+
         let functionItemOutputField = $('<input/>', {
           class: 'functionListOutput',
           id: 'node-input-functionList-output' + id,
@@ -342,6 +352,7 @@
           name: '',
           dataTypeName: '',
           schema: '',
+          responseEvents: '',
           output: functionCacheItemCount.toString(),
         }, functionCacheItemCount++); // length is every time one more than index
         $('#node-input-functionList-container-div').scrollTop($('#node-input-functionList-container-div')

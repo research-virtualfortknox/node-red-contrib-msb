@@ -150,6 +150,11 @@ module.exports = function(RED) {
             },
           };
         }
+        var responseEvents = [];
+        // check for response events
+        if(value.responseEvents){
+          responseEvents = JSON.parse(value.responseEvents);
+        }
         // add function to msb client
         myMsbClient.addFunction({
           functionId: value.name.toUpperCase(),
@@ -176,10 +181,11 @@ module.exports = function(RED) {
                 'message: ' + msb_msg.dataObject);
             node.send(msg_array);
           },
+          responseEvents: responseEvents,
         });
       });
     } catch (err) {
-      console.log('something went wrong: ' + err.message);
+      console.err('something went wrong: ' + err.message);
     }
 
     // print the msb self-description
@@ -192,7 +198,7 @@ module.exports = function(RED) {
       // register client on MSB
       myMsbClient.register();
     } else {
-      console.log('MSB URL is not set!');
+      node.warn('MSB URL is not set!');
     }
 
     // each time a message is received
@@ -200,18 +206,27 @@ module.exports = function(RED) {
       // check event id of the message and publish the msb event
       if (msg.hasOwnProperty('event')) {
         try {
+          var payload;
           if (typeof msg.payload === 'object' ||
 						typeof msg.payload === 'boolean' ||
 						typeof msg.payload === 'number'
           ){
             // send with current format
-            myMsbClient.publish(msg.event.toUpperCase(), msg.payload, 0);
+            payload = msg.payload;
           } else {
             // send as string
-            myMsbClient.publish(msg.event.toUpperCase(), msg.payload.toString(), 0);
+            payload = msg.payload.toString();
           }
+          myMsbClient.publish({
+            eventId: msg.event.toUpperCase(),
+            value: payload,
+            priority: 0,
+            cahced: undefined,
+            postDate: undefined,
+            correlationId: msg.correlationId
+          });
         } catch (event_failure) {
-          console.log('Could not publish event - maybe no such event?' + event_failure);
+          node.warn('Could not publish event - maybe no such event?' + event_failure);
         }
       }
       // also forward message to std out
