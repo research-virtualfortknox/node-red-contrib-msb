@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vfk_research/msb-client-websocket-nodejs": "^1.0.10",
-    "debug": "^4.3.3"
+    "debug": "^4.3.4"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
