@@ -57,7 +57,7 @@ module.exports = function(RED) {
     // enable debug log messages (default = false).
     if (config.msbDebugLogging  === true){
       myMsbClient.enableDebug(true);
-      console.info("enable debugging")
+      node.log("enable debugging")
     }
 
     // enable data format and message data validation. Might impact performance (default = false).
@@ -66,26 +66,26 @@ module.exports = function(RED) {
     // enable event message cache which stores messages in case of a connection loss (default = true).
     if (config.msbEventCache === false){
       myMsbClient.disableEventCache(true);
-      console.info("disable event cache")
+      node.log("disable event cache")
     } else {
       myMsbClient.disableEventCache(false);
-      console.info("enable event cache")
+      node.log("enable event cache")
     }
 
     // set event cache size (default = 1000 message events).
     if (config.msbEventCacheSize && !isNaN(config.msbEventCacheSize)){
       var numberOfEvents = parseInt(config.msbEventCacheSize, 10)
       myMsbClient.setEventCacheSize(numberOfEvents);
-      console.info("set event cache size")
+      node.log("set event cache size")
     }
 
     // enable or disable auto reconnect for the client (default = false).
     if (config.msbAutoReconnect  === false){
       myMsbClient.disableAutoReconnect(true);
-      console.info("disable reconnect")
+      node.log("disable reconnect")
     } else {
       myMsbClient.disableAutoReconnect(false);
-      console.info("enable reconnect")
+      node.log("enable reconnect")
     }
 
     // set the reconnect interval time (default = 10000 ms).
@@ -177,7 +177,7 @@ module.exports = function(RED) {
             for (index; index > 0; index--) {
               msg_array[index - 1] = null;
             }
-            console.info('function ' + value.name.toUpperCase() + ' (node output index ' + value.output + ') called, ' +
+            node.log('function ' + value.name.toUpperCase() + ' (node output index ' + value.output + ') called, ' +
                 'message: ' + msb_msg.dataObject);
             node.send(msg_array);
           },
@@ -185,11 +185,11 @@ module.exports = function(RED) {
         });
       });
     } catch (err) {
-      console.err('something went wrong: ' + err.message);
+      node.error('something went wrong: ' + err.message);
     }
 
     // print the msb self-description
-    console.info(JSON.stringify(myMsbClient.getSelfDescription(), null, 4));
+    node.log(JSON.stringify(myMsbClient.getSelfDescription(), null, 4));
 
     // connect to the MSB websocket interface, if you call the .connect function without any parameters,
     if (msb_url !== undefined) {
