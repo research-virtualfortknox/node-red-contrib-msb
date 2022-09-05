@@ -47,6 +47,10 @@ Available nodes:
 - __msb-event node__: Node to link messages to an MSB event (always wire its output to the msb-object node)
 - __msb-config node__: Node to get the current value of a MSB configuration parameter
 
+## Restrictions
+
+Currently, only one __msb-object node__ should be used within the same Node-Red instance. A single Node-Red instance is able to represent only one ``samrt object``connected to the ``VFK MSB``.
+
 ## Sample flow
 
 You can use [this sample flow](doc/flows/sample-flow.json) to test the capabilities of the nodes:
