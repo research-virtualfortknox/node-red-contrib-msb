@@ -25,6 +25,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Environment (please complete the following information):**
  - node-red-contrib-msb version [e.g. v1.0.2]
+ - Node-Red version [e.g. 2.2.2]
  - MSB version [e.g. 1.5.7-RELEASE]
 
 **Additional context**
