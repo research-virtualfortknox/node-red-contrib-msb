@@ -1,4 +1,4 @@
-FROM nodered/node-red:2.2.2
+FROM nodered/node-red:3.0.2
 
 # use environment vars to set 
 # - proxy configuration
@@ -34,10 +34,6 @@ COPY doc/flows/test-flow.json /data/flows.json
 # Copy entrypoint.sh
 COPY docker/entrypoint.sh /data/entrypoint.sh
 
-# Copy msb contrib nodes
-COPY . /opt/node-red-contrib-msb-master
-RUN npm install /opt/node-red-contrib-msb-master
-
 USER root
 
 # correct line endings
@@ -50,6 +46,15 @@ RUN chmod +x /data/entrypoint.sh
 # Allow node-red to change flows.json and flows_cred.json by scripts
 RUN chown node-red:node-red /data/flows.json
 RUN chown node-red:node-red /data/flows_cred.json
+
+# install node-red-contrib-msb
+COPY . /opt/node-red-contrib-msb-master
+WORKDIR /opt/node-red-contrib-msb-master
+RUN npm install
+# install node-red-contrib-msb to node-red
+WORKDIR /usr/src/node-red
+RUN npm install /opt/node-red-contrib-msb-master
+
 USER node-red
 
 # You should add extra nodes via your package.json file but you can also add them here:

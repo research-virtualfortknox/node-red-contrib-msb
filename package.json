@@ -9,13 +9,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@vfk_research/msb-client-websocket-nodejs": "^1.0.11",
+    "@vfk_research/msb-client-websocket-nodejs": "^1.0.13",
     "debug": "^4.3.4"
   },
   "devDependencies": {
-    "eslint": "^8.10.0",
+    "eslint": "^8.43.0",
     "eslint-config-strongloop": "^2.1.0",
-    "eslint-plugin-html": "^6.2.0"
+    "eslint-plugin-html": "^7.1.0"
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore  --ext .html ."
