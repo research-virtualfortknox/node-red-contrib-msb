@@ -21,10 +21,12 @@ module.exports = function(RED) {
 
     var node = this;
 
-    node.on('close', function() {
-      if (myMsbClient.isRegistered()) {
+    node.on('close', function(done) {
+      if (myMsbClient.isConnected() || myMsbClient.isRegistered()) {
         myMsbClient.disconnect();
       }
+      myMsbClient.disableAutoReconnect(true);
+      done();
     });
 
     // add a status label to the msb-object node to indicate its connection state with msb
@@ -89,7 +91,7 @@ module.exports = function(RED) {
     }
 
     // set the reconnect interval time (default = 10000 ms).
-    myMsbClient.setReconnectInterval(10000);
+    myMsbClient.setReconnectInterval(3000);
 
     // disables hostname verification for ssl (default = false).
     myMsbClient.disableHostnameVerification(true);
